@@ -1,33 +1,32 @@
-###### [Task 1] Intro
+##### [Task 1] Intro
    1. None
 
-###### [Task 2] Methodology
+##### [Task 2] Methodology
    1. None
 
-###### [Task 3] Section 1: SSH
+##### [Task 3] Section 1: SSH
    1. None
 
-###### [Task 4] Section 1: SSH
-   TIP: ssh <user>@<host>
+##### [Task 4] Section 1: SSH
    1. None
 
-###### [Task 5] Section 2: Running Commands
+##### [Task 5] Section 2: Running Commands
    1. None
 
-###### [Task 6] Section 2: Running Commands
+##### [Task 6] Section 2: Running Commands
    1. echo -n hello
 
-###### [Task 7] Section 3: Basic File Operations
+##### [Task 7] Section 3: Basic File Operations
    1. -a
    2. -l
 
-###### [Task 8] Section 3: Basic File Operations
+##### [Task 8] Section 3: Basic File Operations
    1. -n
 
-###### [Task 9] Section 3: Basic File Operations
+##### [Task 9] Section 3: Basic File Operations
    1. None
 
-###### [Task 10] Section 3: Basic File Operations
+##### [Task 10] Section 3: Basic File Operations
    1. None
    2. ~/hello
    3. ../hello
