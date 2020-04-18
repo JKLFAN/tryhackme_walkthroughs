@@ -1,4 +1,4 @@
-# TryHackMe_Walkthroughs
+# TryHackMe Walkthroughs
 An ongoing repo of walkthroughs for the rooms on TryHackMe.
 
  - Rooms can be found here at the TryHackMe website: https://tryhackme.com/hacktivities
