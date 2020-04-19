@@ -35,22 +35,29 @@
    1. pinguftw 
 
 > Steps: 
->
+> 
 > SSH in using the command: "ssh shiba1@10.10.121.51". 
->
+> 
 > Password is "shiba1". 
->
+> 
 > You should be on the user shiba as can be seen that the user is now "shiba@nootnoot:~$". 
->
+> 
 > To create a new file type: "touch noot.txt". 
->
+> 
 > Type "ls" and you should see the file is now there. 
->
+> 
 > You should also see that there is another file called "shiba1", this is the binary that we have to run for the answer. 
->
+> 
 > Type "./shiba1" and it should print out the answer. 
 
 ##### [Task 12] su 
+   1. -s
+
+> Hint: 
+> 
+> By typing "man su", you get more information about the 'su' command. 
+
+
 
 
 
