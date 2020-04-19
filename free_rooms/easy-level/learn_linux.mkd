@@ -35,6 +35,7 @@
    1. pinguftw 
 
 > Steps: 
+>
 > SSH into the IP address using the command: ssh shiba1@10.10.121.51. 
 > Password is "shiba1". 
 > Should be on the user shiba as can be seen that the user is now "shiba@nootnoot:~$". 
