@@ -36,11 +36,11 @@
 
 > Steps: 
 > 
-> SSH in using the command: "ssh shiba1@10.10.121.51". 
+> SSH in using the command: "ssh shiba1@10.10.121.51". (Make sure to put your given IP address)
 > 
 > Password is "shiba1". 
 > 
-> You should be on the user shiba as can be seen that the user is now "shiba@nootnoot:~$". 
+> You should be on the user shiba as can be seen that the user is now "shiba1@nootnoot:~$". 
 > 
 > To create a new file type: "touch noot.txt". 
 > 
@@ -95,7 +95,11 @@
 
 > Hint: 
 > 
-> The binary (the file shiba2) is checking to see if the $USER variable is equal to test1234
+> SSH in using the command: "ssh shiba2@10.10.121.51". (Make sure to put your given IP address)
+> 
+> Password is "pinguftw". (From task 11)
+>
+> The binary (the file called shiba2) is checking to see if the $USER variable is equal to test1234
 > 
 > If you type "echo $USER", you will see that it shows "shiba2"
 >
@@ -106,6 +110,141 @@
 > If you type "echo $USER" it should display "test1234" 
 > 
 > If you then run the binary with "./shiba2", the password will display
+
+##### [Task 22] Section 5 - Adv File Operations
+   1. None 
+   
+##### [Task 23] Section 5 - Adv File Operations: Background 
+   1. None 
+   
+##### [Task 24] Section 5 - Adv File Operations: chmod 
+   1. 460 
+   2. 777 
+   
+> Hint: 
+> 
+> The first explains it very well. All answers can be found there.
+
+##### [Task 25] Section 5 - Adv File Operations: chown
+   1. chown paradox file
+   2. chown paradox:paradox file 
+   3. -r 
+   
+> Hint: 
+> 
+> Syntax is chown <new username>:<new group name> <name of file>
+> 
+> By typing "man chown", we can see more information about the chown command 
+>    
+> Scrolling down you can see: -R, --recursive   operate on files and directories recursively   
+>
+> Recursively meaning working on all the files and directories
+   
+##### [Task 26] Section 5 - Adv File Operations: rm 
+   1. -r 
+   2. -f 
+
+> Hint: 
+> 
+> By typing "man rm", you can get more information about the rm command 
+> 
+> You can see that: -r, -R, --recursive   remove directories and their contents recursively
+>
+> Recursively meaning all all the files in the directory
+>
+> You can see that: -f, --force   ignore nonexistent files and arguments, never prompt
+
+##### [Task 27] Section 5 - Adv File Operations: mv 
+   1. mv file /tmp
+   
+##### [Task 28] Section 5 - Adv File Operations: cp 
+   1. None 
+   
+##### [Task 29] Section 5 - Adv File Operations: cd && mkdir
+   1. cd ~
+   2. mkdir /tmp/test
+   
+> Hint:
+> 
+> The "~" represents the home directory
+>
+> When using absolute paths, remember to put the "/" before the directory you start off with
+
+##### [Task 30] Section 5 - Adv File Operations: ln 
+   1. ln /home/test/testfil /tmp/test
+   
+##### [Task 31] Section 5 - Adv File Operations: find
+   1. -perm
+   2. find /home
+   3. find / -user paradox 
+ 
+> Hint: 
+> 
+> By typing "man find", you can see that: -perm   File's  permission  bits  are  exactly mode (octal or symbolic).
+> 
+> In the guide, it was said that "find /" would list every file on the OS. Therefore we want to see the "find /" to search through the whol system. 
+>
+> We want to filter our searches by looking for the user "paradox", therefore we use the "-user" flag too.
+
+##### [Task 32] Section 5 - Adv File Operations: grep 
+   1. -n 
+   2. grep boop /tmp/aaa
+   
+> Hint: 
+> 
+> By typing "man grep", you can see that: -n, --line-number   Prefix each line of output with the 1-based line number within its input file.
+> 
+> We can see that we are searching for the word "boop" therefore it would be our <string>
+>
+> We are looking in the tmp folder therefore would be using "/tmp/"
+>
+> And in that tmp folder, we are looking for the "aaaa" file 
+   
+##### [Task 33] Binary - Shiba3
+   1. test1234 
+
+> Hint: 
+>
+> SSH in using the command: "ssh shiba3@10.10.121.51". (Make sure to put your given IP address)
+> 
+> Password is "happynootnoises". (From task 21)
+>
+> This task wants us to do 3 things: 
+>
+> 1. Make a directory in our home directory called "test" 
+>
+> 2. In that test directory, create a file called "test1234"
+>
+> 3. Find the location of the shiba4 binary and run that to get the password
+>
+> [1] - To go to the home directory type "cd ~" and you should see "shiba3@nootnoot:~$" 
+>
+> Type the command "mkdir test" to create the test directory 
+>
+> [2] - With the new directory, type "cd" to go into that directory and you should see "shiba3@nootnoot:~/test$"
+> 
+> Type the command "touch test1234" and it will create the file for you
+>
+> [3] - To find the binary type the command "find / -name shiba4"
+>
+> You will see many lines being displayed however you can see that a lot of them say "permission denied", these are not the correct ones since we can not access them.
+>
+> The one we are looking for looks like "/opt/secret/shiba4" 
+>
+> By typing in the command "cd /opt/secret", we will be in the /secret folder 
+>
+> By typing in the command "ls", we can see that the shiba4 binary is present
+>
+> By typing in the command "./shiba4", the binary will run and the password will be displayed
+
+##### [Task 34] Section 6: Misc
+
+
+   
+   
+
+
+   
 
 
 
