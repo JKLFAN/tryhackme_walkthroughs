@@ -81,7 +81,7 @@
 > 
 > Given that you are currently can see this "shiba2@nootnoot:~$", it means that you are currently in the home environment. 
 > 
-> By typing "pwd" you can print the working directory, which is the answer for question 2.  
+> By typing "pwd" you can print the working directory, which is the answer for question 2.
 
 
 ##### [Task 19] Section 4 - Linux Operators: "|" 
@@ -90,7 +90,22 @@
 ##### [Task 20] Section 4- Linux Operators: ";" 
    1. None 
 
-##### []
+##### [Task 21] Binary - shiba2 
+   1. happynootnoises
+
+> Hint: 
+> 
+> The binary (the file shiba2) is checking to see if the $USER variable is equal to test1234
+> 
+> If you type "echo $USER", you will see that it shows "shiba2"
+>
+> Like in Task 18, you can set the variables yourself 
+> 
+> Type in the command "export $USER=test1234" 
+> 
+> If you type "echo $USER" it should display "test1234" 
+> 
+> If you then run the binary with "./shiba2", the password will display
 
 
 
