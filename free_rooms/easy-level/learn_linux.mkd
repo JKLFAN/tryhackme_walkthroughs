@@ -217,7 +217,7 @@
 >
 > 3. Find the location of the shiba4 binary and run that to get the password
 >
-> [1] - To go to the home directory type "cd ~" and you should see "shiba3@nootnoot:~$" 
+> [1] - To go to the home directory type "cd \~" and you should see "shiba3@nootnoot:\~$" 
 >
 > Type the command "mkdir test" to create the test directory 
 >
