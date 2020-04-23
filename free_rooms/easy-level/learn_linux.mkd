@@ -98,11 +98,11 @@
 > SSH in using the command: "ssh shiba2@10.10.121.51". (Make sure to put your given IP address)
 > 
 > Password is "pinguftw". (From task 11)
->
+> 
 > The binary (the file called shiba2) is checking to see if the $USER variable is equal to test1234
 > 
 > If you type "echo $USER", you will see that it shows "shiba2"
->
+> 
 > Like in Task 18, you can set the variables yourself 
 > 
 > Type in the command "export $USER=test1234" 
@@ -135,9 +135,9 @@
 > Syntax is chown <new username>:<new group name> <name of file>
 > 
 > By typing "man chown", we can see more information about the chown command 
->    
-> Scrolling down you can see: -R, --recursive   operate on files and directories recursively   
->
+> 
+> Scrolling down you can see: -R, --recursive   operate on files and directories recursively 
+> 
 > Recursively meaning working on all the files and directories
    
 ##### [Task 26] Section 5 - Adv File Operations: rm 
@@ -149,9 +149,9 @@
 > By typing "man rm", you can get more information about the rm command 
 > 
 > You can see that: -r, -R, --recursive   remove directories and their contents recursively
->
+> 
 > Recursively meaning all all the files in the directory
->
+> 
 > You can see that: -f, --force   ignore nonexistent files and arguments, never prompt
 
 ##### [Task 27] Section 5 - Adv File Operations: mv 
@@ -167,7 +167,7 @@
 > Hint:
 > 
 > The "~" represents the home directory
->
+> 
 > When using absolute paths, remember to put the "/" before the directory you start off with
 
 ##### [Task 30] Section 5 - Adv File Operations: ln 
@@ -183,7 +183,7 @@
 > By typing "man find", you can see that: -perm   File's  permission  bits  are  exactly mode (octal or symbolic).
 > 
 > In the guide, it was said that "find /" would list every file on the OS. Therefore we want to see the "find /" to search through the whol system. 
->
+> 
 > We want to filter our searches by looking for the user "paradox", therefore we use the "-user" flag too.
 
 ##### [Task 32] Section 5 - Adv File Operations: grep 
@@ -204,45 +204,118 @@
    1. test1234 
 
 > Hint: 
->
+> 
 > SSH in using the command: "ssh shiba3@10.10.121.51". (Make sure to put your given IP address)
 > 
 > Password is "happynootnoises". (From task 21)
->
+> 
 > This task wants us to do 3 things: 
->
+> 
 > 1. Make a directory in our home directory called "test" 
->
+> 
 > 2. In that test directory, create a file called "test1234"
->
+> 
 > 3. Find the location of the shiba4 binary and run that to get the password
->
+> 
 > [1] - To go to the home directory type "cd \~" and you should see "shiba3@nootnoot:\~$" 
->
+> 
 > Type the command "mkdir test" to create the test directory 
->
+> 
 > [2] - With the new directory, type "cd" to go into that directory and you should see "shiba3@nootnoot:~/test$"
 > 
 > Type the command "touch test1234" and it will create the file for you
->
+> 
 > [3] - To find the binary type the command "find / -name shiba4"
->
+> 
 > You will see many lines being displayed however you can see that a lot of them say "permission denied", these are not the correct ones since we can not access them.
->
+> 
 > The one we are looking for looks like "/opt/secret/shiba4" 
->
+> 
 > By typing in the command "cd /opt/secret", we will be in the /secret folder 
->
+> 
 > By typing in the command "ls", we can see that the shiba4 binary is present
->
+> 
 > By typing in the command "./shiba4", the binary will run and the password will be displayed
 
 ##### [Task 34] Section 6: Misc
+   1. None 
 
+##### [Task 35] Section 6: Misc - Sudo 
+   1. -u 
+   2. sudo -u jen whoami 
+   3. -l 
 
+> Hints:
+> 
+> By typing "man sudo", you are able to see the following: 
+> 
+> -u user   Run the command as a user other than the default target user (usually root).
+> 
+> -l, --list   If no command is specified, list the allowed (and forbidden) commands for the invoking user (or the user specified by the -U option) on the current host. 
+
+##### [Task 36] Section 6: Misc - Adding users + groups 
+   1. sudo usermod -a -g test test 
    
-   
+##### [Task 37] Section 6: Misc - Nano 
+   1. None
 
+##### [Task 38] Section 6: Misc - Basic Shell Scripting 
+   1. None 
+
+##### [Task 39] Section 6: Misc - Important Files + Directories 
+   1. None 
+
+##### [Task 40] Section 6: Misc - Installing packages (apt)
+   1. None 
+
+##### [Task 41] Section 6: Misc - Process
+   1. None 
+
+##### [Task 42] Fin ~ 
+   1. None 
+
+##### [Task 43] Bonus Challenge - The True Ending 
+   1. ad91979868d06e19d8e8a9c28be56e0c
+
+> Steps: 
+> 
+> SSH in using the command: "ssh shiba4@10.10.121.51". (Make sure to put your given IP address)
+> 
+> Password is "test1234". (From task 33)
+> 
+> If we try and display the content of the text file by typing "cat /root/root.txt", we get an error stating permission denied
+> 
+> The same can be seen after typing "sudo cat /root/root.txt", this is because shiba4 does not have sudo privileges 
+> 
+> Therefore we need to find a user that has sudo privileges 
+> 
+> By logging into each shiba1/2/3/4 user by typing in the "su <username>" command and typing "sudo -l", we can see that none of the users can run sudo
+> 
+> However the other users: noot and nootnoot have not been used before therefore they might have the sudo privileges
+> 
+> A next useful step might be to search for interesting files for each respective user
+> 
+> By typing in command, "find / -user shiba2", you come across an interesting file: "/var/log/test1234" because its in a strange location 
+> 
+> Move to that directory by typing "cd /var/log/" and typing "ls -la" you can see more information about each item in the directory
+> 
+> For the file "test1234", it is owned by shiba2 
+> 
+> Switch to shiba2 by typing "su shiba2" and typing password "pinguftw"
+> 
+> You are then able to see the contents of the file by typing "cat /var/log/test1234"
+> 
+> This then displays "nootnoot:notsofast"
+> 
+> This seems like a username and password
+> 
+> Switch to user nootnoot by typing "su nootnoot" and typing the password "notsofast" and it is successful 
+> 
+> Check the sudo privileges by typing "sudo -l" 
+> 
+> You will see that "User nootnoot may run the following commands on nootnoot:"
+> 
+> Display the flag by typing "sudo cat /root/root.txt"
 
    
 
