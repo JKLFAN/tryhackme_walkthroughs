@@ -39,3 +39,27 @@
 >
 > Therefore by treating all hosts online, there is no need to ping the hosts since we assume they are all online
    
+##### [Task 3] Nmap Scanning 
+   1. nmap -sS 
+> From Task 2 - Question 2, it was seen that the switch for a SYN scan is -sS 
+   2. 2
+> By typing in "nmap -sS 10.10.169.216" (Make sure to put in your given IP address)
+>
+> We get the result of  22/tcp open  ssh   |   80/tcp open  http
+> 
+> This shows that there are 2 open ports 
+   3. TCP 
+> After searching online, you can see that both HTTP and SSH require a more reliable connection therefore would not be UDP
+   4. 6.6.1p1
+> By typing in the command nmap -sS -sV 10.10.169.216 (Make sure to enter your given IP address)
+> 
+> -sS = switch for a SYN scan    -sV = switch for software version scan 
+>
+> The results should look like     22/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.10 
+   5. httponly
+> By typing in the command nmap -sS -A 10.10.169.216 (Make sure to enter your given IP address) 
+>
+> -A = switch for the "aggresive" scan that scans for Enable OS detection, version detection, script scanning, and traceroute
+>
+> Under the 80/tcp section you will see PHPSESSID: httponly flag not set
+   6. http-slowloris-check
