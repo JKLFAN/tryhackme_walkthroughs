@@ -52,7 +52,7 @@ Tip: All answers for this task are found within the help page after you type "he
    5. No answer needed
    6. exploit/windows/http/icecast_header
 > After typing "use icecast", above the console input you should be able to see: [*] Using exploit/windows/http/icecast_header
-   7. #
+   7. \#
    8. No answer needed
    9. No answer needed
 > If you click on the "Access" text on the TryHackMe webpage sidebar, and find the IP for "Internal Virtual IP address"
@@ -125,7 +125,7 @@ Tip: All answers for this task are found within the help page after you type "he
 >
 > An example which can be seen is also as follows: run autoroute -s 10.1.1.0 -n 255.255.255.0 
 > 
-> If we calculate the subnet/netmask for the IP address here: http://jodies.de/ipcalc?host=172.18.1.0&mask1=24&mask2=
+> If we calculate the subnet/netmask for the IP address [here](http://jodies.de/ipcalc?host=172.18.1.0&mask1=24&mask2=)
 >
 > We got the 172.18.1.0/255.255.255.0
 > 
@@ -135,4 +135,4 @@ Tip: All answers for this task are found within the help page after you type "he
 >
 > After typing in the "search server/socks4a" command into the msfconsole, you should see the answer under the names of the matching modules
    3. – proxychains
-> To run a server with proxychains use the answer in your command. More info can be found here: https://linuxhint.com/proxychains-tutorial/
+> To run a server with proxychains use the answer in your command. More info can be found [here](https://linuxhint.com/proxychains-tutorial/)
