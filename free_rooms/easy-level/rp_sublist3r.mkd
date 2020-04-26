@@ -5,24 +5,43 @@
 
 ##### [Task 2]
    1. No answer needed
+> You may not have the /opt folder in your root directory
+>
+> Type "sudo mkdir opt" to make an /opt folder
    2. No answer needed
    3. No answer needed
    4. No answer needed
 
 ##### [Task 3]
-   1.
-   2.
-   3.
-   4.
-   5.
+
+N.B. - All answers can be found in the READ.ME file in the Sublist3r directory 
+   1. -d
+> --domain  | Domain name to enumerate subdomains of
+   2. -e
+> --engines | Specify a comma-separated list of search engines
+   3. -o 
+> --output  | Save the results to text file
+   4. -t 
+>--threads  | Number of threads to use for subbrute bruteforce
+   5. -b
+> --bruteforce  | Enable the subbrute bruteforce module
 
 ##### [Task 4]
    1. No answer needed
-   2.
-   3.
-   4.
-   5.
-   6.
-   7.
-   8.
+   2. mail 
+> Examples of these subdomains look like: "mail.nbc.com", "click.mail.nbc.com"
+   3. admin 
+> Examples of these subdomains look like: "admin.nbc.com" ,"adminmx.nbc.com"
+   4. blog
+> Examples of these subdomains look like: "blog.nbc.com", "blogs.nbc.com"
+   5. dev-www
+> Examples of these subdomains look like: "dev-www.nbc.com"
+   6. help 
+> Examples of these subdomains look like: "help.nbc.com"
+   7. ssologin.stg
+> Examples of these subdomains look like: "ssologin.wip.nbc.com", "ssologin.stg.wip.nbc.com", "ssologin.nbc.com"
+>
+> In this instance the .stg was the correct answer
+   8. office-words 
+> It seemed like the answer was 12 characters long so by deduction it seemed like the office was the correct answer
    
