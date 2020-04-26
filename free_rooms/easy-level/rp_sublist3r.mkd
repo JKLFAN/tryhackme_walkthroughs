@@ -5,9 +5,9 @@
 
 ##### [Task 2]
    1. No answer needed
-     > You may not have the /opt folder in your root directory
-     >
-     > Type "sudo mkdir opt" to make an /opt folder
+> You may not have the /opt folder in your root directory
+>
+> Type "sudo mkdir opt" to make an /opt folder
    2. No answer needed
    3. No answer needed
    4. No answer needed
