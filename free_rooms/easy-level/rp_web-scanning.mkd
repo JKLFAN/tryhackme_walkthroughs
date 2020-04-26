@@ -1,0 +1,95 @@
+#### Link to room: https://tryhackme.com/room/rpwebscanning
+
+##### [Task 1] Pull the lever, Kronk! 
+   1. No answer needed
+   
+##### [Task 2] ... I'm supposed to scan with that? 
+
+N.B. - Answers for this task can be found in the command "man nikto" or "nikto -Help" pages
+
+   1. -h
+> Although, not being visible in the man pages, it can be assumed that the switch -host can be shortened to -h
+   2. -nossl
+> Secure transport can otherwise been known as the internet security protocol SSL (secture socket layer)
+>
+> This is what makes the differnce between HTTP and HTTPS
+>
+> It can be seen in the -Help page that:  -nossl   Disables the use of SSL
+   3. -ssl 
+> It can be seen in the man page that:  -ssl   Only test SSL on the ports specified. Using this option will dramatically speed up requests to HTTPS ports, since otherwise the HTTP request will have to timeout first.
+   4. -p 
+> It can be seen in the man pages that: -port   TCP port(s) to target. To test more than one port on the same host, specify the list of ports in the -p (-port) option.
+   5. -dbcheck 
+> It can be seen in the -Help page that: -dbcheck   Check database and other key files for syntax errors
+   6. -mutate 3
+> It can be seen in the -Help page that: -mutate+   Guess additional file names:
+>
+> 3   Enumerate user names via Apache (/~user type requests)
+   7. -id admin:PrettyAwesomePassword1234
+> It can be seen in the -Help page that: -id+   Host authentication to use, format is id:pass or id:pass:realm
+   8. Apache/2.4.7
+> By typing in the command: "nikto -h 10.10.175.213" (Make sure to put in your given IP address)
+>
+> In the console output you should see: "+ Server: Apache/2.4.7 (Ubuntu)"
+   9. config
+> In the console output you should see: "+ /config/: Configuration information may be available remotely."
+   10. -until 
+> In the -Help page, it can be seen that: -until   Run until the specified time or duration
+   11. -list-plugins
+> In the -Help page, it can be seen that: -list-plugins   List all available plugins, perform no testing
+   12. -plugins outdated
+> In order to see the list of available plugins, type in the command: "nikto -list-plugins" 
+>
+> In the console output, you should b able to see: Plugin: outdated 
+>
+> Outdated - Checks to see whether the web server is the latest version.
+   13. -plugins test
+> In order to see the list of available plugins, type in the command: "nikto -list-plugins" 
+>
+> In the console output, you should b able to see: Plugin: tests 
+>
+>  Nikto Tests - Test host with the standard Nikto tests
+   
+##### [Task 3] Zip ZAP! 
+   1. No answer needed
+   2. url to attack
+> Under the "Quick start guide" you can see the Automated scan button 
+>
+> Under the "Automated Scan" page, you will see the input field titled "URL to attack"
+   3. No answer needed
+   4. robots.txt 
+> On the left hand side tab, you will see a world icon named "Sites" 
+>
+> If you click through and expand all directories, you will eventually see a file called "GET:robots.txt" 
+   5. /
+> If you click on the file and go over to the "Automated Scan" page, above that title should be a tab called "Response"
+>
+> Click the "Response" tab and you will see: "Disallow: /"
+   6. /dvwa/images 
+> Under the "Sites" directory you will also see a "dvwa" directory
+>
+> Expand that directory and you should see anothe directory called "images" 
+   7. HTTPOnly
+> In the bottom left hand side of the interface, you should see a directory called "Alerts" 
+>
+> In that directory you should see an alert titled: "Cookie No HttpOnly Flag" 
+   8. Web Browser XSS Protection Not Enabled
+> This was not present on my scan - hope to google another walkthrough 
+   9. http://www.dvwa.co.uk
+> On the bottom tab there should be a table labelled "Spider" and a spider icon 
+>
+> Click on the tab and you should see a list of URI
+>
+> Scrolling through the URI, it is possible to see a flag that says "Out of Scope"
+>
+> The URI that belongs to is the answer 
+   10. GET 
+> Whilst still in the spider tab, if you look under the column titled "Method"
+>
+> The main two methods present are GET and POST 
+   11. POST
+> Still in the spider tab, the other method found in the "Method" column in the answer 
+>
+   
+   
+   
