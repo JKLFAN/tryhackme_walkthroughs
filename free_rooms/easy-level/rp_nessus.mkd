@@ -143,8 +143,41 @@
 ##### [Taks 6] So you're telling me that's how you set up a web app 
    1. No answer needed
    2. 10107
+> Under the "My Scans" tab, click the "New Scan" button and click the "Web Application Tests" 
+>
+> Once that scan has finished, click into the finished scan and into the "Vulnerabilities" tab
+>
+> If we are looking for the HTTP Server then it seems like the vulnerability titled "HTTP (Multiple Issues) would be correct
+>
+> In there, we should be able to see the vulnerability titled "HTTP Server Type and Version"
+>
+> Once we have opened that vulnerability, on the right hand side there should be a sub heading titled "Plugin Details" 
+>
+> In that sub heading, there should be "ID: 10107" 
    3. login.php 
+> After clicking through some of the vulnerabilities, one vulnerability seems to match the criteria of the question
+>
+> In the vulnerability titled "Web Server (Multiple Issues)", there is a vulnerability titled "Web server Transmit cleartext credentials" 
+>
+> If you were to click into that vulnerability and see the output
+>
+> It is possible to see the page "login.php"
    4. .bak 
+> If we are looking for backup config, it would be safe to assume the answer would lie in the vulnerabilty titled "Backup Files Disclosure"
+>
+> If we would to click into that then we can see that output contains a file and a URL
+>
+> Both of these end with the file extension ".bak"
    5. external/phpids/0.6/docs/examples/
+> If we are looking for a specific directory, it would be safe to assume the answer would lie in the vulnerablity titled "Browssable Web Directories"
+>
+> Once we click into it and look for the words "example" or "documents"
+>
+> We see the url: "http://10.10.108.0/external/phpids/0.6/docs/examples/"
    6. Clickjacking
+If we are looking for a specific vulnerability for this application, it would be safe to assume the answer would lie in the vulnerablity titled "Web Application Potentially Vulnerable to Clickjacking"
+>
+> After reading the description of the vulnerablity, clickjacking is the vulnerability associated with X-Frame-Options
    7. 5.5.9-lubuntu4.26
+> If we are looking for a specific PHP version, it would be safe to assume the answer would lie in the vulnerablity titled "PHP (Multiple Issues)"
+> Under the sub-vulnerabilty of "PHP Version Detection", in the output it is possible to see: "Version : 5.5.9-1ubuntu4.26"
