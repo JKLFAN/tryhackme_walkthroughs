@@ -10,13 +10,64 @@
 
 ##### [Taks 3] Nessus Quiz 
    1. New Scan
+> If you see an introductory popup, if you were to complete that or cancel it
+>
+> Then you will be on the "My Scans" page
+>
+> In the top right hand side there will be a button called "New Scan" that will trigger new scans 
    2. Policies 
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Policies"
+>
+> If you were to click on "Policies", then a description should be visible that contains 
+>
+> "Policies allow you to create custom templates defining what actions are performed during a scan."
    3. Plugin Rules 
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Plugin Rules"
+>
+> If you were to click on "Plugin Rules", then a description should be visible that contains 
+>
+> "Plugin rules allows you to hide or change the severity of any given plugin" 
    4. Scanners
-   5. Host Discovery 
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Scanners"
+>
+> If you were to click on "Scanners", then a description should be visible that contains 
+>
+> "From this page you can view the current status of your scanner and drill down to control all running scans" 
+   5. Host Discovery
+> In order to see scan types, click on the "My Scans" tab in the sidebar
+> 
+> Then click on the "New Scan" button
+>
+> You will the be presented with the "Scan templates page" 
+>
+> Under the "Discovery" subheading, you will see the "Host Discovery" scan type with the description
+>
+> "A simple scan to discer live hosts and open ports" 
    6. Basic Network Scan
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Basic Network Scan" 
+>
+> This will contain the description: "A full system scan suitable for any host"
    7. Credential Patch Audit 
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Credentialed Patch Audit" 
+>
+> This will contain the description: "Authenticate to hosts and enumerate missing updates"
    8. Web Application Tests 
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Web Application Tests" 
+>
+> This will contain the description: "Scan for published and unknown web vulnerabilities"
+
 
 ##### [Taks 4] Scanning!
    1. No answer needed
