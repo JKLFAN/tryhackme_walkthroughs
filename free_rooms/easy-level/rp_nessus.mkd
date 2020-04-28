@@ -1,0 +1,183 @@
+#### Link to room: https://tryhackme.com/room/rpnessus
+
+##### [Taks 1] Deploy! 
+   1. No answer needed
+
+##### [Taks 2] Installation 
+   1. No answer needed
+   2. No answer needed
+   3. No answer needed
+
+##### [Taks 3] Nessus Quiz 
+   1. New Scan
+> If you see an introductory popup, if you were to complete that or cancel it
+>
+> Then you will be on the "My Scans" page
+>
+> In the top right hand side there will be a button called "New Scan" that will trigger new scans 
+   2. Policies 
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Policies"
+>
+> If you were to click on "Policies", then a description should be visible that contains 
+>
+> "Policies allow you to create custom templates defining what actions are performed during a scan."
+   3. Plugin Rules 
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Plugin Rules"
+>
+> If you were to click on "Plugin Rules", then a description should be visible that contains 
+>
+> "Plugin rules allows you to hide or change the severity of any given plugin" 
+   4. Scanners
+> On the right hand side of the page, you will see a sidebar
+> 
+> In that sidebar, you will see the word "Scanners"
+>
+> If you were to click on "Scanners", then a description should be visible that contains 
+>
+> "From this page you can view the current status of your scanner and drill down to control all running scans" 
+   5. Host Discovery
+> In order to see scan types, click on the "My Scans" tab in the sidebar
+> 
+> Then click on the "New Scan" button
+>
+> You will the be presented with the "Scan templates page" 
+>
+> Under the "Discovery" subheading, you will see the "Host Discovery" scan type with the description
+>
+> "A simple scan to discer live hosts and open ports" 
+   6. Basic Network Scan
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Basic Network Scan" 
+>
+> This will contain the description: "A full system scan suitable for any host"
+   7. Credential Patch Audit 
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Credentialed Patch Audit" 
+>
+> This will contain the description: "Authenticate to hosts and enumerate missing updates"
+   8. Web Application Tests 
+> In the "Scan templates" page (See Task 3 - Q5 to reach this page) 
+>
+> Under the subheading "Vulnerabilities", you will see a scan titled "Web Application Tests" 
+>
+> This will contain the description: "Scan for published and unknown web vulnerabilities"
+
+
+##### [Taks 4] Scanning!
+   1. No answer needed
+   2. Schedule
+> Once you've clicked the "Basic Network Scan", you'll be presented with some input fields for the scan
+>
+> In the "Settings" tab, you should be able to see the "BASIC" tab
+>
+> In that "BASIC" tab, you should be able to see a link to "Schedule"
+>
+> Once you have clicked "Schedule" and switched the "Enabled" button, you will be able to set a time
+   3. Port Scan (All Ports)
+> In the same "SETTINGS" tab, you should be able to see a sub tab titled "DISCOVERY"
+>
+> In there, there should be a field called "Scan Type" 
+>
+> If you click on that drop down field and click "Port Scan (all ports)" 
+>
+> The description for Port Scanner settings should now be updated and mention: "Scan all ports (1-65535)"
+   4. San Low Bandwidth Links
+> In the same "SETTINGS" tab, you should be able to see a sub tab titled "ADVANCED"
+>
+> In there, there should be a field called "Scan Type" 
+>
+> If you click on that drop down field and click "Scan low bandwidth links"
+>
+> The description for Performance options should now be updated and mention: "Slow down the scan when network congestion is detected"
+   5. No answer needed
+   6. Nessus SYN Scanner 
+> Once the scan is completed, if you click on the scan then you will be presented with an overview of the results
+>
+> Under the name of the scan, there should be a tab titled "Vulnerabilities" 
+> 
+> You will now be presented with all the results found by the scan
+>
+> If you click on the vulnerability titled "Nessus SYN scanner"
+>
+> You will gain more information about the vulnerability and in particular should be a subheading titled "Output" 
+>
+> In the "Output", you should be able to see which ports are open 
+   7. 6667
+> In the same vulnerability information page (Nessus SYN Scanner)
+>
+> If you look at all the open ports, you can see that 3 ports are open: 22, 80, and 6667
+>
+> By process of elimination, it can be assumed that the port 6667 is the answer 
+>
+> Since port 22 is SSH and port 80 is HTTP
+   8. SSH Weak Algorithms Supported
+> If you go back to the "Vulnerabilities" tab, you will see that all the vulnerabilities have a severity of "INFO" 
+>
+> This can be seen due to the blue INFO icon under the severity column in the table
+>
+> However for "SSH (Multiple Issues)" the icon is a purple MIXED 
+>
+> By clicking into the "SSH (Multiple Issues)"
+>
+> You will be presented with more vulnerabilities of different severities
+>
+> The vulnerability with the MEDIUM (yellow) icon belongs to "SSH Weak Algorithms Supported"
+   9. Apache/2.4.99
+> If you go back to the "Vulnerabilities" tab, if we are looking for a web server, one example would be apache
+>
+> It can be seen that there is a vulnerability titled "Apache HTTP Server (Multiple Issues)" 
+>
+> Clicking into that vulnerability, we will be presented with more vulnerabilities, one of which is titled "Apache HTTP Server Version"
+>
+> If we were to click on that, then in the output subheading of the page, this should be visible: " Version   : 2.4.99" 
+
+##### [Taks 5] Wait, there's mail? 
+   1. No answer needed
+
+##### [Taks 6] So you're telling me that's how you set up a web app 
+   1. No answer needed
+   2. 10107
+> Under the "My Scans" tab, click the "New Scan" button and click the "Web Application Tests" 
+>
+> Once that scan has finished, click into the finished scan and into the "Vulnerabilities" tab
+>
+> If we are looking for the HTTP Server then it seems like the vulnerability titled "HTTP (Multiple Issues) would be correct
+>
+> In there, we should be able to see the vulnerability titled "HTTP Server Type and Version"
+>
+> Once we have opened that vulnerability, on the right hand side there should be a sub heading titled "Plugin Details" 
+>
+> In that sub heading, there should be "ID: 10107" 
+   3. login.php 
+> After clicking through some of the vulnerabilities, one vulnerability seems to match the criteria of the question
+>
+> In the vulnerability titled "Web Server (Multiple Issues)", there is a vulnerability titled "Web server Transmit cleartext credentials" 
+>
+> If you were to click into that vulnerability and see the output
+>
+> It is possible to see the page "login.php"
+   4. .bak 
+> If we are looking for backup config, it would be safe to assume the answer would lie in the vulnerabilty titled "Backup Files Disclosure"
+>
+> If we would to click into that then we can see that output contains a file and a URL
+>
+> Both of these end with the file extension ".bak"
+   5. external/phpids/0.6/docs/examples/
+> If we are looking for a specific directory, it would be safe to assume the answer would lie in the vulnerablity titled "Browssable Web Directories"
+>
+> Once we click into it and look for the words "example" or "documents"
+>
+> We see the url: "http://10.10.108.0/external/phpids/0.6/docs/examples/"
+   6. Clickjacking
+If we are looking for a specific vulnerability for this application, it would be safe to assume the answer would lie in the vulnerablity titled "Web Application Potentially Vulnerable to Clickjacking"
+>
+> After reading the description of the vulnerablity, clickjacking is the vulnerability associated with X-Frame-Options
+   7. 5.5.9-lubuntu4.26
+> If we are looking for a specific PHP version, it would be safe to assume the answer would lie in the vulnerablity titled "PHP (Multiple Issues)"
+> Under the sub-vulnerabilty of "PHP Version Detection", in the output it is possible to see: "Version : 5.5.9-1ubuntu4.26"
