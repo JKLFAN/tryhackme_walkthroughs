@@ -1,3 +1,5 @@
+#### Link to room: https://tryhackme.com/room/zthlinux
+
 #### [Task 1] Intro
    1. No answer needed
 
