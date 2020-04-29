@@ -7,8 +7,8 @@ An ongoing repo of walkthroughs for the rooms on TryHackMe.
 
  - Rooms are then further categorised depending on their difficulty: 
  
-     green   =  easy 
+     - green   =  easy 
 
-     yellow  =  medium
+     - yellow  =  medium
 
-     red     =  hard 
+     - red     =  hard 
