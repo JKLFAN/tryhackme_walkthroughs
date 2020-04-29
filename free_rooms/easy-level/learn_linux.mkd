@@ -125,7 +125,7 @@
    
 > Hint: 
 > 
-> The first answer explains it very well. All answers can be found there.
+> The first table explains it very well. All answers can be found there.
 
 #### [Task 25] Section 5 - Adv File Operations: chown
    1. chown paradox file
