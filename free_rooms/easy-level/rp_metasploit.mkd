@@ -1,20 +1,24 @@
 #### Link to the room - https://tryhackme.com/room/rpmetasploit
 
-##### [Task 1]
+#### [Task 1]
    1. No answer needed 
    
-##### [Task 2]
+#### [Task 2]
    1. No answer needed
    2. No answer needed 
    3. -q
+ > Hint:
+ >
  > By typing in "msfconsole -h", you can see that: -q, --quiet   Do not print the banner on startup
    4. None 
    5. postgresql 
+ > Hint:
+ >
  > Once in Metasploit has been started, once you type the command "db_status", then it should display: Connected to msf. Connection type: postgresql. 
 
-##### [Task 3]
+#### [Task 3]
 
-Tip: All answers for this task are found within the help page after you type "help" in the msf console 
+Hint: All answers for this task are found within the help page after you type "help" in the msf console 
 
    1. No answer needed
    2. ?
@@ -30,33 +34,47 @@ Tip: All answers for this task are found within the help page after you type "he
    12. spool 
    13. save 
    
-##### [Task 4]   
+#### [Task 4]   
    1. exploit 
    2. payload 
-   3. auxiliary 
+   3. auxiliary
+> Hint:
+>
 > An Auxiliary module is a module that does not function specifically for exploitation. These modules help increase the functionality of metasploit as it allows other features like scanning within the console
    4. post
+> Hint:
+>
 > This module can be thought as what you can do POST exploitation, so these modules focus primarily on what you can do after the traget has been exploited
    5. encoder
+> Hint:
+>
 > Encoders are used to change how the payload looks to security products and as a result help evade detection from anti virus software etc.
    6. NOP
    7. load
+> Hint:
+>
 > By typing in "help" in the msfconsole, you can see that in the core commands: load  =  Load a framework plugin
 
-##### [Task 5] 
+#### [Task 5] 
    1. No answer needed
    2. msrpc
+> Hint:
+>
 > After typing in the "db_nmap -sV 10.10.125.254" command (Make sure to put in your given IP address)
 >
-> you should be able to see: 135/tcp   open  msrpc   Microsoft Windows RPC
+> You should be able to see: 135/tcp   open  msrpc   Microsoft Windows RPC
    3. No answer needed 
    4. No answer needed 
    5. No answer needed
    6. exploit/windows/http/icecast_header
+> Hint:
+>
 > After typing "use icecast", above the console input you should be able to see: [*] Using exploit/windows/http/icecast_header
    7. \#
    8. No answer needed
    9. No answer needed
+> Hint:
+>
 > If you click on the "Access" text on the TryHackMe webpage sidebar, and find the IP for "Internal Virtual IP address"
 > 
 > Use this IP address for your LHOST
@@ -64,8 +82,12 @@ Tip: All answers for this task are found within the help page after you type "he
    11. No answer needed
    12. No answer needed
    13. No answer needed
+> Hint:
+>
 > Once you run the exploit, you will see that the command line input will begin with "meterpreter" instead of "msfconsole", in order to return back to the console type "background"
    14. No answer needed
+> Hint:
+>
 > After typing in the the command "sessions", you should be able to see all running sessions
 > 
 > On the far left hand side is the Id
@@ -74,10 +96,14 @@ Tip: All answers for this task are found within the help page after you type "he
 > 
 > Replace the whole of <id-number> with whatever id number is present for you
    
-##### [Task 6]
+#### [Task 6]
    1. spoolsv.exe
+> Hint:
+>
 > After typing "ps" once we are in the meterpreter shell, you should be able to see:  1380  692   spoolsv.exe   
    2. migrate
+> Hint:
+>
 > If you type "help" in the meterpreter console, in the core commands you should be able to see: migrate   Migrate the server to another process
 >
 > When using the migrate command you can supply either the name or the PID
@@ -88,22 +114,36 @@ Tip: All answers for this task are found within the help page after you type "he
 >
 > We will get a error due to insufficent privileges as follows: Error running command migrate: Rex::RuntimeError Cannot migrate into this process (insufficient privileges)
    3. getuid
+> Hint:
+>
 > After typing "help" in the meterpreter console, in the core commands we should be able to see: getuid   Get the user that the server is running as
    4. sysinfo
+> Hint:
+>
 > After typing "help" in the meterpreter console, in the core commands we should be able to see: sysinfo   Gets information about the remote system, such as OS
    5. load kiwi 
->  In order to load a new extension, you can use the "load" command. 
+> Hint:
+>
+> In order to load a new extension, you can use the "load" command. 
 >
 > Found in the help page as: load  Load one or more meterpreter extensions
 >
 > Personally, I found no information regarding the use of the word "kiwi" as the newest version of mimikatz 
    6. getprivs
+> Hint:
+>
 > Found in the meterpreter help page - system control as: getprivs   Attempt to enable all privileges available to the current process
    7. upload
+> Hint:
+>
 > Found in the meterpreter help page - file system commands as: upload   Upload a file or directory
    8. run 
+> Hint:
+>
 > Found in the meterpreter help page - core commands as: run   Executes a meterpreter script or Post module
    9. ipconfig
+> Hint:
+>
 > Found in the meterpreter help page - networking commands as: ipconfig   Display interfaces
 >
 > It can be seen that there is also another commands "ifconfig" with the same description
@@ -115,11 +155,15 @@ Tip: All answers for this task are found within the help page after you type "he
    11. No answer needed
    12. No answer needed
    13. shell
+> Hint:
+>
 > Found in the meterpreter help page - system control as: shell   Drop into a system command shell
    
-##### [Task 7]
+#### [Task 7]
    1. run autoroute -s 172.18.1.0 -n 255.255.255.0
-> TIP: the tip for the answer format does not display all the asterisks therefore do not count on that
+> Hint: 
+>
+> the answer format does not display all the asterisks therefore do not count on that
 >
 > We should see the help page for autoroute once we type in the following command: "run autoroute -h"
 > 
@@ -133,8 +177,12 @@ Tip: All answers for this task are found within the help page after you type "he
 > 
 > Then input that answer in the correct syntax
    2. auxiliary/server/socks4a
+> Hint:
+>
 > In order to background a session, type the following command into a meterpreter session: "background" 
 >
 > After typing in the "search server/socks4a" command into the msfconsole, you should see the answer under the names of the matching modules
    3. – proxychains
+> Hint:
+>
 > To run a server with proxychains use the answer in your command. More info can be found [here](https://linuxhint.com/proxychains-tutorial/)
