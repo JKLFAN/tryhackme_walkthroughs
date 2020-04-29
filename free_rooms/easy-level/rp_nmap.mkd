@@ -5,21 +5,37 @@
 
 #### [Task 2]
    1. -h
-> Hint = In addition, user can type in "man nmap"    
+> Hint:
+>
+> In addition, user can type in "man nmap"    
    2. -sS
-> Hint = -sS/sT/sA/sW/sM:  TCP SYN/Connect()/ACK/Window/Maimon scans  
+> Hint:
+>
+> -sS/sT/sA/sW/sM:  TCP SYN/Connect()/ACK/Window/Maimon scans  
    3. -sU
-> Hint = -sU: UDP Scan
+> Hint:
+>
+> -sU: UDP Scan
    4. -O
-> Hint = -O: Enable OS detection
+> Hint:
+>
+> -O: Enable OS detection
    5. -sV
-> Hint = -sV: Probe open ports to determine service/version info
+> Hint:
+>
+> -sV: Probe open ports to determine service/version info
    6. -v
-> Hint = -v: Increase verbosity level (use -vv or more for greater effect)
+> Hint:
+>
+> -v: Increase verbosity level (use -vv or more for greater effect)
    7. -vv
-> Hint = -v: Increase verbosity level (use -vv or more for greater effect)
+> Hint:
+>
+> -v: Increase verbosity level (use -vv or more for greater effect)
    8. -oX
-> Hint = -oN/-oX/-oS/-oG <file>: Output scan in normal, XML, s|<rIpt kIddi3, and Grepable format, respectively, to the given filename.
+> Hint:
+>
+> -oN/-oX/-oS/-oG <file>: Output scan in normal, XML, s|<rIpt kIddi3, and Grepable format, respectively, to the given filename.
    9. -A 
 > Hint:
 >
@@ -27,15 +43,25 @@
 >
 > This is thought as being "loud" because the user is scanning for all information therefore scans the target quite aggressively.
    10. -T5
-> Hint = -T<0-5>: Set timing template (higher is faster)
+> Hint:
+>
+> -T<0-5>: Set timing template (higher is faster)
    11. -p  
-> Hint = -p <port ranges>: Only scan specified ports. Ie: -p22; -p1-65535
+> Hint:
+>
+> -p <port ranges>: Only scan specified ports. Ie: -p22; -p1-65535
    12. -p- 
-> Hint = Rather than listing all the ports in a range, you can use the dash to symbolise all ports 
+> Hint:
+>
+> Rather than listing all the ports in a range, you can use the dash to symbolise all ports 
    13. --script
-> Hint = --script=<Lua scripts>: <Lua scripts> is a comma separated list of directories, script-files or script-categories
+> Hint:
+>
+> --script=<Lua scripts>: <Lua scripts> is a comma separated list of directories, script-files or script-categories
    14. --script vuln 
-> Hint = Given the hint it is clear to use the switch from task 13 to specify the name of the script 
+> Hint:
+>
+> Given the hint it is clear to use the switch from task 13 to specify the name of the script 
    15. -Pn
 > Hint: 
 >
@@ -47,7 +73,9 @@
    
 #### [Task 3] Nmap Scanning 
    1. nmap -sS 
-> Hint = From Task 2 - Question 2, it was seen that the switch for a SYN scan is -sS 
+> Hint:
+>
+> From Task 2 - Question 2, it was seen that the switch for a SYN scan is -sS 
    2. 2
 > Hint: 
 >
@@ -57,7 +85,9 @@
 > 
 > This shows that there are 2 open ports 
    3. TCP 
-> Hint = After searching online, you can see that both HTTP and SSH require a more reliable connection therefore would not be UDP
+> Hint:
+>
+> After searching online, you can see that both HTTP and SSH require a more reliable connection therefore would not be UDP
    4. 6.6.1p1
 > Hint: 
 >
