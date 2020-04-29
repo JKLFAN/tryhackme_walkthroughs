@@ -1,0 +1,20 @@
+#### Link to room: https://tryhackme.com/room/ccpentesting 
+
+#### [Task 1] Introduction 
+   1. No answer needed 
+   
+#### [Task 2] Section 1 - Network Utilities: Nmap
+   1. 
+   2.
+   3.
+   4.
+   5.
+   6.
+   7.
+   8.
+   9. No answer needed 
+   10. 
+   11.
+   12.
+   13.
+   
