@@ -1,40 +1,40 @@
-##### [Task 1] Intro
-   1. None
+#### [Task 1] Intro
+   1. No answer needed
 
-##### [Task 2] Methodology
-   1. None
+#### [Task 2] Methodology
+   1. No answer needed
 
-##### [Task 3] Section 1: SSH
-   1. None
+#### [Task 3] Section 1: SSH
+   1. No answer needed
 
-##### [Task 4] Section 1: SSH
-   1. None
+#### [Task 4] Section 1: SSH
+   1. No answer needed
 
-##### [Task 5] Section 2: Running Commands
-   1. None
+#### [Task 5] Section 2: Running Commands
+   1. No answer needed
 
-##### [Task 6] Section 2: Running Commands
+#### [Task 6] Section 2: Running Commands
    1. echo -n hello
 
-##### [Task 7] Section 3: Basic File Operations
+#### [Task 7] Section 3: Basic File Operations
    1. -a
    2. -l
 
-##### [Task 8] Section 3: Basic File Operations
+#### [Task 8] Section 3: Basic File Operations
    1. -n
 
-##### [Task 9] Section 3: Basic File Operations
-   1. None
+#### [Task 9] Section 3: Basic File Operations
+   1. No answer needed
 
-##### [Task 10] Section 3: Basic File Operations
-   1. None
+#### [Task 10] Section 3: Basic File Operations
+   1. No answer needed
    2. ~/hello
    3. ../hello
 
-##### [Task 11] Binary 
+#### [Task 11] Binary 
    1. pinguftw 
 
-> Steps: 
+> Hint: 
 > 
 > SSH in using the command: "ssh shiba1@10.10.121.51". (Make sure to put your given IP address)
 > 
@@ -50,7 +50,7 @@
 > 
 > Type "./shiba1" and it should print out the answer. 
 
-##### [Task 12] su 
+#### [Task 12] su 
    1. -s
 
 > Hint: 
@@ -58,22 +58,22 @@
 > By typing "man su", you get more information about the 'su' command. 
 
 
-##### [Task 13] Section 4 - Linux Operators 
-   1. None 
+#### [Task 13] Section 4 - Linux Operators 
+   1. No answer needed 
 
-##### [Task 14] Section 4 - Linux Operators: ">"
+#### [Task 14] Section 4 - Linux Operators: ">"
    1. echo twenty > test
 
-##### [Task 15] Section 4 - Linux Operators: ">>"
-   1. None
+#### [Task 15] Section 4 - Linux Operators: ">>"
+   1. No answer needed
 
-##### [Task 16] Section 4 - Linux Operators: "&&"
-   1. None 
+#### [Task 16] Section 4 - Linux Operators: "&&"
+   1. No answer needed 
 
-##### [Task 17] Section 4 - Linux Operators: "&"
-   1. None 
+#### [Task 17] Section 4 - Linux Operators: "&"
+   1. No answer needed 
 
-##### [Task 18] Section 4 - Linux Operators: "$" 
+#### [Task 18] Section 4 - Linux Operators: "$" 
    1. export nootnoot=1111
    2. /home/shiba2
 
@@ -84,13 +84,13 @@
 > By typing "pwd" you can print the working directory, which is the answer for question 2.
 
 
-##### [Task 19] Section 4 - Linux Operators: "|" 
-   1. None 
+#### [Task 19] Section 4 - Linux Operators: "|" 
+   1. No answer needed 
 
-##### [Task 20] Section 4- Linux Operators: ";" 
-   1. None 
+#### [Task 20] Section 4- Linux Operators: ";" 
+   1. No answer needed 
 
-##### [Task 21] Binary - shiba2 
+#### [Task 21] Binary - shiba2 
    1. happynootnoises
 
 > Hint: 
@@ -111,21 +111,21 @@
 > 
 > If you then run the binary with "./shiba2", the password will display
 
-##### [Task 22] Section 5 - Adv File Operations
-   1. None 
+#### [Task 22] Section 5 - Adv File Operations
+   1. No answer needed 
    
-##### [Task 23] Section 5 - Adv File Operations: Background 
-   1. None 
+#### [Task 23] Section 5 - Adv File Operations: Background 
+   1. No answer needed
    
-##### [Task 24] Section 5 - Adv File Operations: chmod 
+#### [Task 24] Section 5 - Adv File Operations: chmod 
    1. 460 
    2. 777 
    
 > Hint: 
 > 
-> The first explains it very well. All answers can be found there.
+> The first answer explains it very well. All answers can be found there.
 
-##### [Task 25] Section 5 - Adv File Operations: chown
+#### [Task 25] Section 5 - Adv File Operations: chown
    1. chown paradox file
    2. chown paradox:paradox file 
    3. -r 
@@ -140,7 +140,7 @@
 > 
 > Recursively meaning working on all the files and directories
    
-##### [Task 26] Section 5 - Adv File Operations: rm 
+#### [Task 26] Section 5 - Adv File Operations: rm 
    1. -r 
    2. -f 
 
@@ -154,13 +154,13 @@
 > 
 > You can see that: -f, --force   ignore nonexistent files and arguments, never prompt
 
-##### [Task 27] Section 5 - Adv File Operations: mv 
+#### [Task 27] Section 5 - Adv File Operations: mv 
    1. mv file /tmp
    
-##### [Task 28] Section 5 - Adv File Operations: cp 
-   1. None 
+#### [Task 28] Section 5 - Adv File Operations: cp 
+   1. No answer needed 
    
-##### [Task 29] Section 5 - Adv File Operations: cd && mkdir
+#### [Task 29] Section 5 - Adv File Operations: cd && mkdir
    1. cd ~
    2. mkdir /tmp/test
    
@@ -170,10 +170,10 @@
 > 
 > When using absolute paths, remember to put the "/" before the directory you start off with
 
-##### [Task 30] Section 5 - Adv File Operations: ln 
+#### [Task 30] Section 5 - Adv File Operations: ln 
    1. ln /home/test/testfil /tmp/test
    
-##### [Task 31] Section 5 - Adv File Operations: find
+#### [Task 31] Section 5 - Adv File Operations: find
    1. -perm
    2. find /home
    3. find / -user paradox 
@@ -186,7 +186,7 @@
 > 
 > We want to filter our searches by looking for the user "paradox", therefore we use the "-user" flag too.
 
-##### [Task 32] Section 5 - Adv File Operations: grep 
+#### [Task 32] Section 5 - Adv File Operations: grep 
    1. -n 
    2. grep boop /tmp/aaa
    
@@ -200,7 +200,7 @@
 >
 > And in that tmp folder, we are looking for the "aaaa" file 
    
-##### [Task 33] Binary - Shiba3
+#### [Task 33] Binary - Shiba3
    1. test1234 
 
 > Hint: 
@@ -237,15 +237,15 @@
 > 
 > By typing in the command "./shiba4", the binary will run and the password will be displayed
 
-##### [Task 34] Section 6: Misc
-   1. None 
+#### [Task 34] Section 6: Misc
+   1. No answer needed 
 
-##### [Task 35] Section 6: Misc - Sudo 
+#### [Task 35] Section 6: Misc - Sudo 
    1. -u 
    2. sudo -u jen whoami 
    3. -l 
 
-> Hints:
+> Hint:
 > 
 > By typing "man sudo", you are able to see the following: 
 > 
@@ -253,31 +253,31 @@
 > 
 > -l, --list   If no command is specified, list the allowed (and forbidden) commands for the invoking user (or the user specified by the -U option) on the current host. 
 
-##### [Task 36] Section 6: Misc - Adding users + groups 
+#### [Task 36] Section 6: Misc - Adding users + groups 
    1. sudo usermod -a -g test test 
    
-##### [Task 37] Section 6: Misc - Nano 
-   1. None
+#### [Task 37] Section 6: Misc - Nano 
+   1. No answer needed
 
-##### [Task 38] Section 6: Misc - Basic Shell Scripting 
-   1. None 
+#### [Task 38] Section 6: Misc - Basic Shell Scripting 
+   1. No answer needed 
 
-##### [Task 39] Section 6: Misc - Important Files + Directories 
-   1. None 
+#### [Task 39] Section 6: Misc - Important Files + Directories 
+   1. No answer needed 
 
-##### [Task 40] Section 6: Misc - Installing packages (apt)
-   1. None 
+#### [Task 40] Section 6: Misc - Installing packages (apt)
+   1. No answer needed 
 
-##### [Task 41] Section 6: Misc - Process
-   1. None 
+#### [Task 41] Section 6: Misc - Process
+   1. No answer needed 
 
-##### [Task 42] Fin ~ 
-   1. None 
+#### [Task 42] Fin ~ 
+   1. No answer needed 
 
-##### [Task 43] Bonus Challenge - The True Ending 
+#### [Task 43] Bonus Challenge - The True Ending 
    1. ad91979868d06e19d8e8a9c28be56e0c
 
-> Steps: 
+> Hint: 
 > 
 > SSH in using the command: "ssh shiba4@10.10.121.51". (Make sure to put your given IP address)
 > 
@@ -316,14 +316,3 @@
 > You will see that "User nootnoot may run the following commands on nootnoot:"
 > 
 > Display the flag by typing "sudo cat /root/root.txt"
-
-   
-
-
-
-
-
-
-
-
-
