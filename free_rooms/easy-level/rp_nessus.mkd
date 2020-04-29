@@ -1,14 +1,14 @@
 #### Link to room: https://tryhackme.com/room/rpnessus
 
-##### [Taks 1] Deploy! 
+#### [Taks 1] Deploy! 
    1. No answer needed
 
-##### [Taks 2] Installation 
+#### [Taks 2] Installation 
    1. No answer needed
    2. No answer needed
    3. No answer needed
 
-##### [Taks 3] Nessus Quiz 
+#### [Taks 3] Nessus Quiz 
    1. New Scan
 > If you see an introductory popup, if you were to complete that or cancel it
 >
@@ -69,7 +69,7 @@
 > This will contain the description: "Scan for published and unknown web vulnerabilities"
 
 
-##### [Taks 4] Scanning!
+#### [Taks 4] Scanning!
    1. No answer needed
    2. Schedule
 > Once you've clicked the "Basic Network Scan", you'll be presented with some input fields for the scan
@@ -137,10 +137,10 @@
 >
 > If we were to click on that, then in the output subheading of the page, this should be visible: " Version   : 2.4.99" 
 
-##### [Taks 5] Wait, there's mail? 
+#### [Taks 5] Wait, there's mail? 
    1. No answer needed
 
-##### [Taks 6] So you're telling me that's how you set up a web app 
+#### [Taks 6] So you're telling me that's how you set up a web app 
    1. No answer needed
    2. 10107
 > Under the "My Scans" tab, click the "New Scan" button and click the "Web Application Tests" 
@@ -175,7 +175,7 @@
 >
 > We see the url: "http://10.10.108.0/external/phpids/0.6/docs/examples/"
    6. Clickjacking
-If we are looking for a specific vulnerability for this application, it would be safe to assume the answer would lie in the vulnerablity titled "Web Application Potentially Vulnerable to Clickjacking"
+> If we are looking for a specific vulnerability for this application, it would be safe to assume the answer would lie in the vulnerablity titled "Web Application Potentially Vulnerable to Clickjacking"
 >
 > After reading the description of the vulnerablity, clickjacking is the vulnerability associated with X-Frame-Options
    7. 5.5.9-lubuntu4.26
