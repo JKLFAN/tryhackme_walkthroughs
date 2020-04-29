@@ -1,10 +1,12 @@
 #### Link to room: https://tryhackme.com/room/rpsublist3r
 
-##### [Task 1]
+#### [Task 1]
    1. No answer needed
 
-##### [Task 2]
+#### [Task 2]
    1. No answer needed
+> Hint:
+>
 > You may not have the /opt folder in your root directory
 >
 > Type "sudo mkdir opt" to make an /opt folder
@@ -12,36 +14,59 @@
    3. No answer needed
    4. No answer needed
 
-##### [Task 3]
+#### [Task 3]
 
-N.B. - All answers can be found in the READ.ME file in the Sublist3r directory 
+Hint: All answers can be found in the READ.ME file in the Sublist3r directory 
    1. -d
+> Hint:
+>
 > --domain  | Domain name to enumerate subdomains of
    2. -e
+> Hint:
+>
 > --engines | Specify a comma-separated list of search engines
    3. -o 
+> Hint:
+>
 > --output  | Save the results to text file
    4. -t 
+> Hint:
+>
 >--threads  | Number of threads to use for subbrute bruteforce
    5. -b
+> Hint:
+>
 > --bruteforce  | Enable the subbrute bruteforce module
 
-##### [Task 4]
+#### [Task 4]
    1. No answer needed
    2. mail 
+> Hint:
+>
 > Examples of these subdomains look like: "mail.nbc.com", "click.mail.nbc.com"
    3. admin 
+> Hint:
+>
 > Examples of these subdomains look like: "admin.nbc.com" ,"adminmx.nbc.com"
    4. blog
+> Hint:
+>
 > Examples of these subdomains look like: "blog.nbc.com", "blogs.nbc.com"
    5. dev-www
+> Hint:
+>
 > Examples of these subdomains look like: "dev-www.nbc.com"
    6. help 
+> Hint:
+>
 > Examples of these subdomains look like: "help.nbc.com"
    7. ssologin.stg
+> Hint:
+>
 > Examples of these subdomains look like: "ssologin.wip.nbc.com", "ssologin.stg.wip.nbc.com", "ssologin.nbc.com"
 >
 > In this instance the .stg was the correct answer
    8. office-words 
+> Hint:
+>
 > It seemed like the answer was 12 characters long so by deduction it seemed like the office was the correct answer
-   
