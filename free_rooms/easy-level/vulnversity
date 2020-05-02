@@ -1,0 +1,112 @@
+#### Link to room: https://tryhackme.com/room/vulnversity
+
+#### [Task 1] Deploy the machine
+   1. No answer needed 
+
+#### [Task 2] Reconnaissance 
+   1. No answer needed
+   2. 6 
+> Hint:
+>
+> Input the following command into terminal "nmap -sC \<GIVEN-IP-ADDRESS\>"
+   3. 3.5.12
+> Hint: 
+>
+> After you have entered the nmap command from Q2, you should see something like this: 
+>
+> "3128/tcp open  http-proxy  Squid http proxy 3.5.12"
+   4. 400
+> Hint: 
+>
+> The flag "-p-" means scan for a specified number of ports, therefore scanning the ports from 0-400 
+   5. DNS 
+> Hint:
+>
+> If you type the command "nmap -h", you should be able to see: 
+>
+> "-n/-R: Never do DNS resolution/Always resolve"
+   6. ubuntu
+> Hint: 
+>
+> 3333/tcp open  http  Apache httpd 2.4.18 ((Ubuntu))
+   7. 3333
+> Hint: 
+>
+> 3333/tcp open  http  Apache httpd 2.4.18 ((Ubuntu))
+   8. No answer needed
+
+#### [Task 3] Locating directories using GoBuster 
+   1. No answer needed 
+> Hint: 
+>
+> Type in the following command into the terminal: 
+>
+> gobuster dir -u http://\<GIVEN-IP-ADDRESS\>:3333 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt
+> dir = directory brute forcing
+>
+> -u = the target url
+>
+> -w = the wordlist
+>
+> /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt = the path to our word list
+   2. /internal/
+> Hint:
+>
+> The gobuster should output something like this: 
+```
+===============================================================
+2020/01/01 00:00:00 Starting gobuster
+===============================================================
+/images (Status: 301)
+/css (Status: 301)
+/js (Status: 301)
+/fonts (Status: 301)
+/internal (Status: 301)
+===============================================================
+2020/00/00 00:00:00 Finished
+===============================================================
+
+```
+
+#### [Task 4] Compromise the webserver 
+   1. .php
+> Hint: 
+>
+> If you navigate to "http://\<GIVEN-IP-ADDRESS\>:3333/internal/"
+>
+> You should see something like this: 
+>
+> ```
+> INPUT IMAGE HERE
+> ```
+> If you try to upload a file, it seems like a lot of file extensions are not allowed (.jpg, .txt, etc.) 
+>
+> Through some trial and error, it seems like the correct answer is ".php" despite a lot of file extensions not being accepted 
+   2. No answer needed
+   3. .phtml 
+> Hint: 
+>
+> Once you get the intruder results, you should see that the status of them all are 200 
+>
+> However if you look closely enough at the "length" you should be able to see that the extension ".phtml" is slightly shorter (723 compared to the 737 for everything else) 
+>
+> This tells us that this extensions gives back a slightly different response
+   4. No answer needed 
+   5. bill 
+> Hint: 
+>
+> If you type in "pwd" to print the working directory, we will see that we are currently in the root ("/") directory 
+>
+> By navigating to the "home" directory with "cd home" and ls the contents of that directory with "ls" 
+>
+> we see that there is a directory titled "bill"
+   6. 8bd7992fbe8a6ad22a63361004cfcedb
+> Hint:
+>
+> In the "bill" directory there should be a file that titled "user.txt" 
+>
+> If you "cat user.txt." then the user flag will be printed out 
+
+#### [Task 5] Priviledge Escalation 
+   1. /bin/systemctl
+   2. 
