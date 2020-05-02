@@ -1,3 +1,58 @@
 #### Link to room: https://tryhackme.com/room/toolboxvim 
 
+Hint: 
+
+The most convenient way of searching these commands would be to search via google.
+
+some resources can be found: [here](https://www.keycdn.com/blog/vim-commands) and [here](https://devhints.io/vim)
+
 #### [Task 1] Task 1
+   1. No answer needed 
+   2. No answer needed 
+
+#### [Task 2] Task 2
+   1. i 
+   2. typing
+   3. esc
+   4. h
+   5. l
+   6. k
+   7. j
+   8. w
+   9. e
+   10. i
+   11. i
+   12. a
+   13. a
+   14. 0
+   15. No answer needed
+
+#### [Task 3] Task 3
+   1. :w
+   2. :w !sudo tee %
+> Hint: 
+>
+> This resource [here](https://www.cyberciti.biz/faq/vim-vi-text-editor-save-file-without-root-permission/)
+   3. :wq
+   4. :q
+   5. :q!
+   6. :wqa
+
+#### [Task 4] Task 4
+   1. yy
+   2. 2yy
+   3. y$
+   4. p
+   5. p
+   6. d
+   7. 2dd
+   8. d
+   9. x
+
+#### [Task 5] Task 5
+   1. /pattern
+   2. ?pattern
+   3. n
+   4. N
+   5. :%s/old/new/g
+   6. :vimgrep 
