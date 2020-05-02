@@ -1,0 +1,106 @@
+#### Link to room: https://tryhackme.com/room/thefindcommand
+
+#### [Task 1] Start finding 
+   1. No answer needed  
+
+#### [Task 2] Be more specific 
+   1. find / -type f -name "*.xml"
+> Hint:
+>
+> / = represents the root direcotry therefore will search the whole file system
+>
+> -type f = since we are specifically looking for a file 
+>
+> -name = since we are looking for a name of a file 
+>
+> "*.xml" = since we are looking a file which ends in ".xml", therefore the beginning can be anything - a wildcard is used
+   2. find /home -type f -iname "user.txt"
+> Hint:
+>
+> /home = represents the home direcotry therefore will search everything in the "home" directory
+>
+> -type f = since we are specifically looking for a file 
+>
+> -iname = since we are looking for a name of a file and we want it to be case insensitive 
+>
+> "user.txt" = the exact name of the file we are looking for
+   3. find / -type d -name "*exploits*"
+> Hint:
+>
+> / = represents the root direcotry therefore will search the whole file system
+>
+> -type d = since we are specifically looking for a directory 
+>
+> -name = since we are looking for a name of a file 
+>
+> "*exploits*" = since we are looking a file which contains the word exploit therefore the *'s on either side denote that anything is acceptable as long as it contains that word
+
+#### [Task 3] Know exactly what you're looking for 
+   1. find / -type f -user kittycat  
+   2. find / -type f -size 150c
+> Hint: 
+>
+> "150" since there are no signs before this, it means its exactly 150
+>
+> c is the suffix for bytes
+   3. find /home -type f -size -2k -name "*.txt"
+> Hint:
+>
+> "-2" represents that is it anything that is less than 2 
+>
+> k is the suffix for kilobytes (kiB)
+   4. find / -type f -perm 644
+> Hint: 
+>
+> resource [here](https://www.oreilly.com/library/view/linux-pocket-guide/9780596806347/re44.html)
+>
+> 644 is split such that 6 |  4  | 4   =  
+>
+> 6 = User: readable + writable
+>
+> 4 = Group: readable 
+>
+> 4 = Other: readable
+   5. find / -type f -perm /444  
+> Hint:
+>
+> "/444" = the slash represents that the found files will contain at least one of the specified permissions
+>
+> 444 is split such that 4 |  4  | 4   =  
+>
+> 4 = User: readable
+>
+> 4 = Group: readable 
+>
+> 4 = Other: readable
+   6. find / -type f -perm o=w -name "*.sh" 
+> Hint: 
+>
+> resource [here](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxa400/sym.htm)
+>
+> "o=w" = 'O'wner has 'W'rite permissions 
+>
+   7. find /usr/bin -type f -user root -perm -u=s
+> Hint: 
+>
+> resource [here](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxa400/sym.htm)
+>
+> "-u=s" = 'U'ser has 'S'et-user-ID (SUID) permissions 
+>
+> "-" represents that the return files will contain at least these permissions and will return any higher permissions too
+
+   8. find / -type f -atime -10 -name "*.png"
+> Hint:
+>
+> "-atime" represents last 'A'ccess in days 
+>
+> "-10" represents less than 10 days ago 
+   9. find /usr/bin -type f -mmin -120
+> Hint:
+>
+> "-mmin" represents last 'M'odified in minutes
+>
+> "-120" represents the last 120 minutes (2 hours)
+
+#### [Task 4] Have you found it? 
+   1. No answer needed
