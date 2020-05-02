@@ -1,0 +1,33 @@
+#### Link to room: https://tryhackme.com/room/crackthehash
+
+Hint: 
+
+The hashes were cracked using the online tool [here](https://crackstation.net/)
+
+If they could not be cracked online then hashcat was used
+
+In order to identify the hash type for hash cat, [this](https://www.tunnelsup.com/hash-analyzer/) online tool was used 
+
+#### [Task 1] Level 1
+   1. easy 
+   2. password123
+   3. letmein
+   4. bleh 
+  > Hint: 
+  >
+  > In order to identify the hash type, [this](https://www.tunnelsup.com/hash-analyzer/) online tool was used
+  >
+  > Type the following command into the terminal: 
+  >
+  > hashcat -m 3200 -a 0 $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom /usr/share/wordlists/rockyou.txt
+  >
+  > -m = bcrypt mode 
+  >
+  > -a 0 = attack mode: straight (dictionary attack) 
+   5. Eternity22
+
+#### [Task 2] Level 2 
+   1. paule
+   2. n63umy8lkf4i
+   3. waka99
+   4. 481616481616
