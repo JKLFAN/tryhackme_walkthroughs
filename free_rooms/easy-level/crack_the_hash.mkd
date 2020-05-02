@@ -6,7 +6,7 @@ The hashes were cracked using the online tool [here](https://crackstation.net/)
 
 If they could not be cracked online then hashcat was used
 
-In order to identify the hash type for hash cat, [this](https://www.tunnelsup.com/hash-analyzer/) online tool was used 
+In order to identify the hash type for hash cat, [this](https://www.onlinehashcrack.com/hash-identification.php#results) online tool was used 
 
 #### [Task 1] Level 1
    1. easy 
@@ -15,13 +15,11 @@ In order to identify the hash type for hash cat, [this](https://www.tunnelsup.co
    4. bleh 
   > Hint: 
   >
-  > In order to identify the hash type, [this](https://www.tunnelsup.com/hash-analyzer/) online tool was used
-  >
   > Type the following command into the terminal: 
   >
   > hashcat -m 3200 -a 0 $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom /usr/share/wordlists/rockyou.txt
   >
-  > -m = bcrypt mode 
+  > -m 3200 = bcrypt mode 
   >
   > -a 0 = attack mode: straight (dictionary attack) 
    5. Eternity22
@@ -30,4 +28,22 @@ In order to identify the hash type for hash cat, [this](https://www.tunnelsup.co
    1. paule
    2. n63umy8lkf4i
    3. waka99
+> Hint: 
+>
+> Type the following command into the terminal: 
+>
+> hashcat -m 1800 -a 0 $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPMAXi4bJMl9be.cfi3/qxIf.hsGpS41BqMhSrHVXgMpdjS6xeKZAs02.:aReallyHardSalt /usr/share/wordlists/rockyou.txt
+>
+> -m 1800 = sha512crypt
+>
+> -a 0 = attack mode: straight (dictionary attack) 
    4. 481616481616
+> Hint: 
+>
+> Type the following command into the terminal: 
+>
+> hashcat -m 110 -a 0 $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom /usr/share/wordlists/rockyou.txt
+>
+> -m 110 = SHA1 
+>
+> -a 0 = attack mode: straight (dictionary attack) 
