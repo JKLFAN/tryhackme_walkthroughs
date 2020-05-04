@@ -1,0 +1,92 @@
+#### Link to room: https://tryhackme.com/room/introtopython
+
+#### [Task 1] Introduction to Python
+   1. No answer needed  
+
+#### [Task 2] Hello World 
+   1. No answer needed 
+
+##### [Task 3] Mathematical Operators 
+
+Hint: Answers can be found in the table above
+   1. Greater than
+   2. Not Equal to
+   3. truee
+> Hint:
+>
+> The sign "! =" means does not equal to 
+>
+> Therefore it is true that 1 ! = (does not equal to) 0 
+   4. Less than or equal
+   5. truee
+> Hint: 
+>
+> The sign "< =" means less than or equal to 
+>
+> Therefore it is true that the variable a (with a value of 15) is less than or equal to 15
+   6. No answer needed
+
+##### [Task 4] Logical Operators 
+   1. No answer needed
+
+##### [Task 5] Variables and Data Types  
+
+Hint: Answers can be found in the first table of this task 
+
+   1. integer
+   2. string
+   3. float 
+   4. No answer needed
+
+##### [Task 6] Functions
+   1. No answer needed
+
+##### [Task 7] If statements  
+   1. No answer needed
+
+##### [Task 8] Loops
+   1. No answer needed
+
+##### [Task 9] Files
+   1. No answer needed
+
+##### [Task 10] Virtual Environment  
+   1. No answer needed
+
+##### [Task 11] Libraries and PIP  
+   1. No answer needed
+
+##### [Task 12] Challenge time!
+   1. b'THM{d431ff8fea00ad3f6b685b7182078e73}'
+> Hint: 
+>
+```
+#!/bin/python3 
+
+import base64
+
+data = open("encodedflag.txt","r").read() 
+
+def decode(decoded):
+   decoded1 = base64.b16decode(decoded)
+   decoded2 = base64.b16decode(decoded1)
+   decoded3 = base64.b16decode(decoded2)
+   decoded4 = base64.b16decode(decoded3)
+   decoded5 = base64.b16decode(decoded4)
+
+   decoded6 = base64.b32decode(decoded5)
+   decoded7 = base64.b32decode(decoded6)
+   decoded8 = base64.b32decode(decoded7)
+   decoded9 = base64.b32decode(decoded8)
+   decoded10 = base64.b32decode(decoded9)
+
+   decoded11 = base64.b64decode(decoded10)
+   decoded12 = base64.b64decode(decoded11)
+   decoded13 = base64.b64decode(decoded12)
+   decoded14 = base64.b64decode(decoded13)
+   decoded15 = base64.b64decode(decoded14)
+
+   print(decoded15)
+
+decode(data)
+```
