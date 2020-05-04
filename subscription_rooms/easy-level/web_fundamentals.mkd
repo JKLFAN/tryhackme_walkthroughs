@@ -1,0 +1,56 @@
+#### Link to room: https://tryhackme.com/room/webfundamentals
+
+Hint: All information for the answers can be found in the accompanying description text
+
+#### [Task 1] Introduction and objectives
+   1. No answer needed  
+
+#### [Task 2] How do we load websites 
+
+Hint: All information is found in the description text
+
+   1. GET
+   2. 80
+   3. CSS
+
+#### [Task 3] More HTTP - Verbs and request formats
+   1. POST
+   2. GET
+   3. Nay
+   4. 418
+   5. 401
+
+#### [Task 4] Cookies, tasy! 
+   1. No answer needed 
+
+#### [Task 5] Mini CTF
+   1. thm{162520bec925bd7979e9ae65a725f99f}
+> Hint: 
+>
+> curl http://10.10.199.232:8081/ctf/get
+   2. thm{3517c902e22def9c6e09b99a9040ba09}
+> Hint: 
+>
+> curl -X POST --data "flag_please" http://10.10.199.232:8081/ctf/post
+   3. thm{91b1ac2606f36b935f465558213d7ebd}
+> Hint: 
+>
+> Navigate to the "http://10.10.199.232:8081/ctf/getcookie" in the browser
+>
+> Open up developer tools (normally F12) - Im using Firefox
+>
+> Click the "Storage" tab in the developer tools, you may have to expand the window to see all the tabs
+>
+> On the left hand side of the developer tools window there should be a "Cookies" dropdown menu and in there should be the flag 
+   4. thm{c10b5cb7546f359d19c747db2d0f47b3}
+> Hint: 
+>
+> Making sure you are still in the dev tools from the previous question
+>
+> Click on the name of the "flag" and you should be able to edit it to "flagpls"
+>
+> Scroll across and you should be able to edit the value of value to "flagpls" as well 
+>
+> In the browser navigate to ""http://10.10.199.232:8081/ctf/sendcookie"
+>
+> The flag should be displayed on the page 
