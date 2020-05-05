@@ -1,0 +1,33 @@
+#### Link to room: https://tryhackme.com/room/learnowaspzap
+
+#### [Task 1] Intro to ZAP
+   1. Zed Attack Proxy
+   2. No answer needed  
+
+#### [Task 2] Disclaimer
+   1. No answer needed  
+   
+#### [Task 3] Installation
+   1. No answer needed  
+   2. No answer needed  
+
+#### [Task 4] How to perform an automated scan 
+   1. No answer needed  
+
+#### [Task 5] Manual Scanning
+   1. 127.0.0.1
+
+#### [Task 6] Scanning an Authenticated Web Application
+   1. No answer needed  
+
+#### [Task 7] Brute-force Directories
+   1. No answer needed  
+
+#### [Task 8] Brutefoce Web Login 
+   1. 
+
+#### [Task 9] ZAP Extensions 
+   1. No answer needed  
+
+#### [Task 10] Further Reading
+   1. No answer needed  
