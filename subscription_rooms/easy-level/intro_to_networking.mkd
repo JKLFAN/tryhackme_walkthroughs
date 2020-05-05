@@ -1,0 +1,78 @@
+#### Link to room: https://tryhackme.com/room/introtonetworking
+
+Hint: All information for the answers can be found in the accompanying description text
+
+#### [Task 1] Introduction and objectives
+   1. No answer needed  
+
+#### [Task 2] The OSI Model: An Overview
+   1. 4 
+   2. 2
+   3. 2
+   4. 1
+   5. 6
+   6. 5
+   7. 7
+   8. 3
+   9. Segments
+   10. 7 
+   11. UDP
+
+#### [Task 3] Encapsulation
+   1. Frames
+   2. Datagrams 
+   3. De-encapsulation 
+   4. Data Link
+   5. Aye
+
+#### [Task 4] The TCP/IP Model
+   1. TCP/IP
+   2. Transport
+   3. Application 
+   4. Physical 
+   5. Internet
+   6. Connection-based
+   7. Synchronise
+   8. SYN/ACK
+   9. ACK
+
+#### [Task 5] Wireshark
+   1. Domain Name System
+   2. Network
+   3. User Datagram Protocol 
+   4. Ethernet II
+   5. Physical
+   6. MAC
+
+#### [Task 6] Networking Tools - Ping
+   1. ping bbc.co.uk
+   2. 68.183.254.76
+   3. -i
+   4. -4
+   5. -v
+
+#### [Task 7] Networking Tools - Traceroute
+   1. No answer needed
+   2. -i
+   3. -T
+   4. Internet
+
+#### [Task 8] Networking Tools - WHOIS
+   1. No answer needed
+   2. 94025
+   3. 29/03/1997
+   4. No answer needed
+   5. Redmond
+   6. Bellevue Golf Course 
+   7. msnhst@microsoft.com
+
+#### [Task 9] Networking Tools - Dig
+   1. Domain Name System 
+   2. Recursive 
+   3. Top-Level Domain 
+   4. Local Cache
+   5. 8.8.4.4
+   6. 86400
+
+#### [Task 10] Further Reading
+   1. No answer needed 
