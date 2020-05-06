@@ -1,0 +1,54 @@
+#### Link to room: https://tryhackme.com/room/commonlinuxprivesc
+
+#### [Task 1] Introduction
+   1. No answer needed  
+
+#### [Task 2] Example Research Question 
+   1. repeater
+   2. NTLM
+   3. cron jobs
+   4. base 16
+   5. sha512crypt
+> Hint:
+>
+> https://hashcat.net/wiki/doku.php?id=example_hashes
+
+#### [Task 3] Vulnerability Searching
+
+Hint: All answers for this task can be found on the ExploitDB website
+   1. CVE-2020-10385
+   2. CVE-2016-1240 
+   3. CVE-2007-0017 
+   4. CVE-2019-18634 
+
+#### [Task 4] Man Pages
+   1. -r 
+> Hint: 
+>
+> After typing "man scp" in the terminal, you should see something like this: 
+>
+>  -r | Recursively copy entire directories.
+   2. -l
+> Hint: 
+>
+> After typing "man fdisk" in the terminal, you should see something like this: 
+>
+> -l, --list | List the partition tables for the specified devices and then exit.
+   3. -b
+> Hint: 
+>
+> After typing "man nano" in the terminal, you should see something like this: 
+>
+> -B, --backup | When saving a file, back up the previous version of it, using the current filename suffixed with a tilde 
+   4. nc -l -p 12345
+> Hint: 
+>
+> After typing "man nano" in the terminal, you should see something like this: 
+>
+>  -l | listen mode, for inbound connects
+>
+>  -p port | local port number (port numbers can be individual or ranges: lo-hi [inclusive])
+
+
+#### [Task 5] Final Thoughts
+   1. No answer needed
