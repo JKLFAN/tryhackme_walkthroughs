@@ -1,0 +1,142 @@
+https://tryhackme.com/room/commonlinuxprivesc
+
+#### [Task 1] Get Connected
+   1. No answer needed  
+
+#### [Task 2] Understanding Privesc
+   1. No answer needed 
+
+#### [Task 3] Direction of Privilege Escalation
+   1. No answer needed  
+
+#### [Task 4] Enumeration
+   1. No answer needed 
+   2. polobox
+> Hint: 
+>
+> Once you sign in via ssh you will see something like "user3@polobox:~$"
+>
+> The host name is the word after the "@" sign
+   3. 8
+> Hint: 
+>
+> Type the command "cat /etc/passwd" 
+>
+> You should be able to see all the users so then just count the number of them 
+   4. 4 
+> Hint: 
+>
+> Type the command "cat /etc/shells" 
+>
+> You should be able to see all the shells so then just count the number of them 
+   5. autoscript.sh 
+> Hint: 
+>
+> After looking at the hint on the page, can you only then find out the answer 
+>
+> Even after reading the contents of the script, you cant see anything that says 5 mins
+>
+> Wasn't able to find the cron job that stated it was being ran every 5 mins either  
+   6. /etc/passwd
+> Hint: 
+>
+> Assuming critial file make something like the passwd file, it was a decent guess 
+>
+> By typing out the following command "ls -la /etc" and look for the passwd file 
+>
+> You will see the added permissions for that file 
+   7. No answer needed
+
+#### [Task 5] Abusing SUID/GUID Files
+   1. /home/user3/shell
+> Hint: 
+>
+> After typing in the following command "find / -perm -u=s -type f 2>/dev/null"
+>
+> We see a file path that has a SUID and contains user3
+   2. No answer needed
+   3. No answer needed
+
+#### [Task 6] Exploting Writeable /etc/passwd
+   1. No answer needed 
+   2. vertical 
+> Hint:
+>
+> Since we are trying to get root access, it indicates a vertical direction 
+   3. $1$new$p7ptkEKU1HnaHpRtzNizS1
+> Hint:
+>
+> Type the following command to get a password hash: 
+>
+> "openssl passwd -1 -salt new 123"
+   4. new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash
+> Hint: 
+>
+> Based of this example given "test:"x":0:0:root:/root:/bin/bash" or "username:passwordhash:0:0:root:/root:/bin/bash"
+>
+> Note: ^ for the "x" there doesnt have to be quotes, it was used to escape a certain character being displayed
+>
+> Input the name of the user and the hashed password for the correct entry
+   5. No answer needed 
+   6. No answer needed
+
+#### [Task 7] Escaping Vi Editor
+   1. No answer needed 
+   2. NOPASSWD
+> Hint:
+>
+> By Typing in the command "sudo -l" 
+>
+> You should be able to see something like 
+>
+>User user8 may run the following commands on polobox:
+>
+>(root) NOPASSWD: /usr/bin/vi
+   3. No answer needed 
+   4. No answer needed 
+
+#### [Task 8] Exploiting Crontab 
+   1. No answer needed 
+   2. No answer needed 
+   3. -p 
+> Hint: 
+>
+> After typing "msfvenom --help", you should be able to see the following:
+>
+> -p, --payload | <payload>  Payload to use
+   4. No answer needed 
+   5. /home/user4/Desktop
+> Hint: 
+>
+> If you navigate to user4's desktop folder
+>
+> Then type the following command "pwk"
+>
+> The current working directory will be outputted
+   6. No answer needed 
+   7. No answer needed 
+   8. No answer needed 
+
+#### [Task 9] Exploiting PATH Variable
+   1. No answer needed 
+   2. ls
+> Hint:
+>
+> It just lists the content of the current directory
+>
+> If you were to type the command "ls", it would output the same result 
+   3. No answer needed 
+   4. echo "/bin/bash" > ls
+> Hint:
+>
+> The /bin/bash is the part that opens up a new terminal that we would ran as root
+   5. chmod +x ls
+> Hint:
+>
+> "chmod +x" is the command that makes a file executable 
+   6. No answer needed 
+   7. No answer needed 
+   8. No answer needed 
+
+#### [Task 10] Expanding Your Knowledge
+   1. No answer needed 
