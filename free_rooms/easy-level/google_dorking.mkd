@@ -1,0 +1,33 @@
+#### Link to room: https://tryhackme.com/room/googledorking
+
+#### [Task 1] Ye Ol' Search Engine
+   1. No answer needed  
+
+#### [Task 2] Let's Learn About Crawlers
+   1. Index
+   2. Crawling
+   3. Keywords
+
+#### [Task 3] Enter: Search Engine Optimisation
+   1. Yea 
+   2. Nay
+   3. 81/100 
+   4. 0
+   5. pgp.cmnatic.co.uk
+
+#### [Task 4] Beepboop - Robots.txt
+   1. ablog.com/robots.txt
+   2. /sitemap.xml
+   3. user-agent: Bingbot
+   4. disallow: /dont-index-me/ 
+   5. .conf
+
+#### [Task 5] Sitemaps
+   1. xml
+   2. map
+   3. route
+
+#### [Task 6] What is Google Dorking?
+   1. site:bbc.co.uk flood defences
+   2. filetype:
+   3. intitle: login
