@@ -18,22 +18,22 @@
    3. Shift + Enter
    4. 2 
 
-#### [Task 5] Sitemaps
+#### [Task 6] Sitemaps
    1. xml
    2. map
    3. route
 
-#### [Task 6] Interacting with the Filesystem! 
+#### [Task 7] Interacting with the Filesystem! 
    1. No answer needed
 
-#### [Task 7] Handling Data with Pandas
+#### [Task 8] Handling Data with Pandas
    1. Series and Dataframes
    2. read_csv
    3. head
    4. tail
    5. shape
 
-#### [Task 8] Visualising Data with Matplotlib 
+#### [Task 9] Visualising Data with Matplotlib 
    1. plot()
    2. xlabel
    3. ylabel
