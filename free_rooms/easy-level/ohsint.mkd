@@ -1,0 +1,51 @@
+#### Link to room: https://tryhackme.com/room/ohsint
+
+#### [Task 1] ohSINT
+   1. cat 
+> Hint: 
+>
+> Type the command "exiftool \<FILEPATH_TO_JPEG\>
+>
+> The output should contain "Copyright : OWoodFlint"
+>
+> Search "OWoodFlint" and google
+>
+> Go to the twitter page to find the photo of the avatar 
+   2. London
+> Hint: 
+>
+> From the google search, you can see that there is also a github account
+>
+> In there you will see that "I am from London"
+   3. UnileverWiFi
+> Hint: 
+>
+> From the twitter page, we can see that there was a tweet that contained a Bssid
+>
+> Go to "https://wigle.net/"
+>
+> Enter the BSSID in the search bar on the right hand side and click "filter" 
+>
+> Search around the map till you find a purple circle and zoom in to find the answer
+
+   4. OWoodflint@gmail.com 
+> Hint: 
+>
+> From the google search, you can see that there is also a github account
+>
+> In there you will see that "Email me if you want to help out: OWoodflint@gmail.com"
+   5. github
+   6. New York
+> Hint: 
+>
+> From the google search, you can see that there is also a blog page
+>
+> In there you will see that "Im in New York right now"
+   7. pennYDr0pper.!
+> Hint: 
+>
+> From the google search, you can see that there is also a blog page
+>
+> If you right click on the page and then click "View page source"
+>
+> There is a a weird phrase of "pennYDr0pper.!"
