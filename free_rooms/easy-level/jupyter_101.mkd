@@ -1,0 +1,42 @@
+#### Link to room: https://tryhackme.com/room/jupyter101
+
+#### [Task 1] Preface
+   1. No answer needed  
+
+#### [Task 2] What is Jupyter
+   1. No answer needed  
+
+#### [Task 3] Deploying Instance & Logging In 
+   1. No answer needed
+
+#### [Task 4] Let's Learn More about Jupyter
+   1. No answer needed
+
+#### [Task 5] Understanding how Jupyter Notebooks Run 
+   1. interpreter  
+   2. 1
+   3. Shift + Enter
+   4. 2 
+
+#### [Task 5] Sitemaps
+   1. xml
+   2. map
+   3. route
+
+#### [Task 6] Interacting with the Filesystem! 
+   1. No answer needed
+
+#### [Task 7] Handling Data with Pandas
+   1. Series and Dataframes
+   2. read_csv
+   3. head
+   4. tail
+   5. shape
+
+#### [Task 8] Visualising Data with Matplotlib 
+   1. plot()
+   2. xlabel
+   3. ylabel
+   4. title
+   5. color
+   6. zlabel
