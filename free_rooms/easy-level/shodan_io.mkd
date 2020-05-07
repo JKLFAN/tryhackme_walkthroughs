@@ -1,0 +1,102 @@
+#### Link to room: https://tryhackme.com/room/shodan
+
+Hint: Majority of the answers will be found through "https://www.shodan.io/"
+
+#### [Task 1] Introduction
+   1. No answer needed 
+
+#### [Task 2] Getting Started
+   1. AS15169
+> Hint: 
+>
+> Go to "https://www.ultratools.com/tools/asnInfo"
+>
+> Search for Google
+>
+> Look for the one with the owner being "GOOGLE, US"
+   2. 2000
+> Hint: 
+>
+> Go to "https://www.ultratools.com/tools/asnInfo"
+>
+> Search for Google
+>
+> Look for the one with the owner being "GOOGLE, US" and its registration date 
+   3. United States 
+> Hint:
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169"
+>
+> On the left, should be a title for "Top countries"
+   4. SSH
+> Hint:
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169"
+>
+> On the left, should be a title for "Top services"
+   5. OpenSSH
+> Hint:
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169"
+>
+> On the left, should be a title for "Top services" and click "SSH"
+>
+> Under each subheading should be something like this "SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7"
+>
+> Indicating the "OpenSSH" product
+   6. cloud
+> Hint:
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169"
+>
+> On the left, should be a title for "Top services" and click "SSH"
+>
+> Under each subheading should be "Google Cloud"
+
+#### [Task 3] Filters
+   1. No answer needed
+
+#### [Task 4] Google & Filtering 
+   1. Linux 3.x
+> Hint: 
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169 product:"MySQL""
+>
+> On the left, should be a title for "Top Operating Systems" 
+   2. EU
+> Hint: 
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169 product:"MySQL""
+>
+> On the left, should be a title for "Top Countries"
+>
+> Take note, that at the time that this room was written I assume "EU" was third however not anymore 
+   3. Hypertext Transfer Protocol
+> Hint: 
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169"
+>
+> On the left, should be a title for "Top services" and HTTP is most popular
+   4. Mountain View
+> Hint: 
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169 product:"MySQL""
+>
+> On the left, should be a title for "Top Countries" and click "United States"
+>
+> On the left, should be a title for "Top cities"
+   5. Windows Server 2012
+> Hint: 
+>
+> On Shodan, search for google's ASN by searching for "ASN:AS15169 country:"US" city:"Oakland""
+>
+> On the left, should be a title for "Top Operating System"
+   6. Nay 
+> Hint
+>
+> On Shodan, Search for "product:"webcam""
+>
+> On the left, should be a title for "Top Organisations", Google should not be present 
+
+#### [Task 5] Exploring the API & Conclusion
+   1. No answer needed
