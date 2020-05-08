@@ -95,7 +95,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 >
 > If we were to search for "Apache Tomcat/7.0.88 exploit metasploit" into google
 >
-> We should come across this (web page)[https://www.rapid7.com/db/modules/exploit/multi/http/tomcat_mgr_upload]
+> We should come across this [web page](https://www.rapid7.com/db/modules/exploit/multi/http/tomcat_mgr_upload)
 >
 > If we type "msfconsole" into a terminal 
 >
