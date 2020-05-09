@@ -1,0 +1,46 @@
+#### Link to room: https://tryhackme.com/room/ninjaskills
+
+NOTE - This room was completed poorly and will update the hints in due time
+
+#### [Task 1] Ninja Skills
+   1. D8B3 v2Vb 
+> Hint: 
+>
+> Type the following command into terminal:
+>
+> "find / -group best-group"
+>
+> There should be 2 files that you should NOT contain "Permission Denied"
+   2. oiMO
+> Hint: 
+>
+> Type the following command into terminal:
+>
+> "find / -exec grep -l '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} \;"
+>
+> -exec = is used to execute the grep function 
+>
+> -l = --files-with-matches
+   3. c4ZX
+> Hint: 
+>
+> Not very efficient; definitely could be done better but: 
+>
+> find / -name \<NAME-OF-FILE\> 2> /dev/null | sha1sum
+>
+> 2> /dev/null = removes error messages aka "Permission Denied" 
+>
+>  | sha1su = take the output from the find and SHA1 hash it
+   4. bny0
+> Hint: 
+>
+> Trial and errored since the find command could not find this file therefore by process of elminiation, I assumed it was this file 
+   5. X1Uy
+> Hint: 
+>
+> Type the following command into terminal
+>
+> find / -uid 502 2> /dev/null
+   6. 8V2L
+> This one consisted of finding the file and manually looking at the permissions
+ 
