@@ -1,0 +1,197 @@
+#### Link to room: https://tryhackme.com/room/kenobi
+
+#### [Task 1] Deploy the vulnerable machine
+   1. No answer needed
+   2. 7
+> Hint: 
+>
+> Type the following command into terminal: 
+>
+> nmap -sV -sC 10.10.52.18 
+>
+> You should get an output similar to this 
+```
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         ProFTPD 1.3.5
+22/tcp   open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 b3:ad:83:41:49:e9:5d:16:8d:3b:0f:05:7b:e2:c0:ae (RSA)
+|   256 f8:27:7d:64:29:97:e6:f8:65:54:65:22:f7:c8:1d:8a (ECDSA)
+|_  256 5a:06:ed:eb:b6:56:7e:4c:01:dd:ea:bc:ba:fa:33:79 (ED25519)
+80/tcp   open  http        Apache httpd 2.4.18 ((Ubuntu))
+| http-robots.txt: 1 disallowed entry 
+|_/admin.html
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html).
+111/tcp  open  rpcbind     2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|   100000  3,4          111/udp6  rpcbind
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/tcp6  nfs
+|   100003  2,3,4       2049/udp   nfs
+|   100003  2,3,4       2049/udp6  nfs
+|   100005  1,2,3      37675/tcp6  mountd
+|   100005  1,2,3      40161/tcp   mountd
+|   100005  1,2,3      43761/udp6  mountd
+|   100005  1,2,3      56940/udp   mountd
+|   100021  1,3,4      36911/tcp   nlockmgr
+|   100021  1,3,4      38563/tcp6  nlockmgr
+|   100021  1,3,4      39045/udp6  nlockmgr
+|   100021  1,3,4      48438/udp   nlockmgr
+|   100227  2,3         2049/tcp   nfs_acl
+|   100227  2,3         2049/tcp6  nfs_acl
+|   100227  2,3         2049/udp   nfs_acl
+|_  100227  2,3         2049/udp6  nfs_acl
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)
+2049/tcp open  nfs_acl     2-3 (RPC #100227)
+
+```
+
+#### [Task 2] Enumerating Samba for shares
+   1. 3 
+> Hint: 
+>
+> Type the following command into terminal 
+>
+> nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse \<GIVEN-IP-ADDRESS\>
+>
+> You should see something like this: 
+>
+```
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Host script results:
+| smb-enum-shares: 
+|   account_used: guest
+|   \\10.10.52.18\IPC$: 
+|     Type: STYPE_IPC_HIDDEN
+|     Comment: IPC Service (kenobi server (Samba, Ubuntu))
+|     Users: 1
+|     Max Users: <unlimited>
+|     Path: C:\tmp
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+|   \\10.10.52.18\anonymous: 
+|     Type: STYPE_DISKTREE
+|     Comment: 
+|     Users: 0
+|     Max Users: <unlimited>
+|     Path: C:\home\kenobi\share
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+|   \\10.10.52.18\print$: 
+|     Type: STYPE_DISKTREE
+|     Comment: Printer Drivers
+|     Users: 0
+|     Max Users: <unlimited>
+|     Path: C:\var\lib\samba\printers
+|     Anonymous access: <none>
+|_    Current user access: <none>
+|_smb-enum-users: ERROR: Script execution failed (use -d to debug)
+
+```
+> From it you should be able to see 3 shares: guest, anonymous, and print 
+   2. log.txt
+> Hint: 
+>
+> Type the following command into terminal: 
+>
+> smbclient //\<GIVEN-IP-ADDRESS\>/anonymous
+>
+> You will be prompted to enter a password, however since you are an anonymous user, you do not have to enter a password (press enter to skip)
+>
+> You will then see that we are on "smb: \>"
+>
+> Type "ls" to list the files in the directory
+   3. 21
+> Hint: 
+>
+> Looking at the NMAP scan, you will be able to the port FTP is on
+   4. /var 
+> Hint:
+>
+> Type the following command in terminal
+>
+> nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount \<GIVEN-IP-ADDRESS\>
+>
+> You should see something like this: 
+```
+PORT    STATE SERVICE
+111/tcp open  rpcbind
+| nfs-ls: Volume /var
+|   access: Read Lookup NoModify NoExtend NoDelete NoExecute
+| PERMISSION  UID  GID  SIZE  TIME                 FILENAME
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  .
+| rwxr-xr-x   0    0    4096  2019-09-04T12:27:33  ..
+| rwxr-xr-x   0    0    4096  2019-09-04T12:09:49  backups
+| rwxr-xr-x   0    0    4096  2019-09-04T10:37:44  cache
+| rwxrwxrwt   0    0    4096  2019-09-04T08:43:56  crash
+| rwxrwsr-x   0    50   4096  2016-04-12T20:14:23  local
+| rwxrwxrwx   0    0    9     2019-09-04T08:41:33  lock
+| rwxrwxr-x   0    108  4096  2019-09-04T10:37:44  log
+| rwxr-xr-x   0    0    4096  2019-01-29T23:27:41  snap
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  www
+|_
+| nfs-showmount: 
+|_  /var *
+| nfs-statfs: 
+|   Filesystem  1K-blocks  Used       Available  Use%  Maxfilesize  Maxlink
+|_  /var        9204224.0  1836528.0  6877100.0  22%   16.0T        32000
+
+```
+
+#### [Task 3] Gain initial access with ProFtpd
+   1. 1.3.5 
+> Hint:
+>
+> Type the following command in terminal
+>
+> nc \<GIVEN-IP-ADDRESS\> 21 
+>
+> You should see something like this: 
+>
+> 220 ProFTPD 1.3.5 Server (ProFTPD Default Installation) [10.10.52.18]
+   2. 3
+> Hint:
+>
+> Type the following command in terminal
+>
+> searchsploit proftpd 1.3.5 
+>
+> You should be able to see a table with the title "exploit title" 
+>
+> Count the number of available exploits for the answer 
+   3. No answer needed
+   4. No answer needed
+   5. d0b0f3f53b6caa532a83915e19224899
+> Hint: 
+>
+> Follow the steps on the page and it will bring you to kenobi's account
+
+#### [Task 4] Privilege Escalation with Path Variable Manipulation
+   1. /usr/bin/menu
+> Hint: 
+>
+> Once in Kenobi's account, type the following command: 
+>
+> find / -perm -u=s -type f 2>/dev/null
+>
+> This command will search the root directory for files with SUIDs
+   2. 3 
+   3. No answer needed
+   4. 177b3cd8562289f37382721c28381f02
+> Hint:
+>
+> Follow the commands on the task
+>
+> Make sure that when you are execute the first "echo" command that you are in the /tmp directory first 
+>
+> Otherwise it will not work since the PATHS will not be the same 
+
+
