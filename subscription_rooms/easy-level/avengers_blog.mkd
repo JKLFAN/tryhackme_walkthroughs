@@ -1,0 +1,115 @@
+#### Link to room: https://tryhackme.com/room/avengers
+
+#### [Task 1] Deploy
+   1. No answer needed
+   2. No answer needed
+
+#### [Task 2] Cookies
+   1. cookie_secrets
+> Hint:
+>
+> Navigate to \<GIVEN-IP-ADDRESS\> in the browser 
+>
+> You should see the page with "The Official Averngers Blog"
+>
+> If you were to press "F12" then a menu should appear
+>
+> In that menu look for (expand maybe) for the heading "Storage"
+>
+> In the "Storage" tab, clikc the cookies header and under that header should be the cookie titled "flag1"
+
+#### [Task 3] HTTP Headers
+   1. headers_are_important
+> Hint:
+>
+> Navigate to \<GIVEN-IP-ADDRESS\> in the browser 
+>
+> You should see the page with "The Official Averngers Blog"
+>
+> If you were to press "F12" then a menu should appear
+>
+> In that menu look for (expand maybe) for the heading "Network"
+>
+> Refresh the page and you should see a lot of requests being made 
+>
+> If you look for the output that is titled "/" and click it 
+>
+> Another side tab should open up and in there should be a sub heading titled "Response headers"
+>
+> In that sub heading is "flag2"
+
+#### [Task 4] Enumration and FTP
+   1. 8fc651a739befc58d450dc48e1f1fd2e
+> Hint: 
+>
+> If you run the following command in termial, you should get something like: 
+>
+> nmap -sC -sV \<GIVEN-IP-ADDRESS\>
+>
+```
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 14:58:20:d1:2f:be:d9:dc:30:ad:27:2d:e1:81:60:f2 (RSA)
+|   256 18:67:73:3d:42:11:7a:28:26:5e:a5:43:fd:ef:ff:43 (ECDSA)
+|_  256 da:3d:0c:cc:47:47:94:c2:f4:95:ea:f0:3b:93:f4:d4 (ED25519)
+80/tcp open  http    Node.js Express framework
+|_http-title: Avengers! Assemble!
+
+```
+> If you type the command "ftp \<GIVEN-IP-ADDRESS\>" and enter the credentials groot:iamgroot 
+>
+> You should be successfully logged in
+>
+> Go through to the /files directory to find the flag3.txt file 
+>
+> In order to read the file you need to download it with the following command: 
+>
+> get flag3.txt
+>
+> Exit ftp by typing "bye" and the cat the file (Mine was in my root directory) 
+
+#### [Task 5] GoBuster
+   1. /portal 
+> Hint: 
+>
+> Type the following command into terminal: 
+>
+> gobuster dir -u http://\<GIVEN-IP-ADDRESS\> -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt 
+>
+> If you navigate to the found directories, you should be able to see which one contains the login page
+
+#### [Task 6] SQL Injection 
+   1. 223
+> Hint:
+>
+> If you were to navigate to the http://\<GIVEN-IP-ADDRESS\>/portal 
+>
+> You should see a login page
+>
+> If you enter the phrase "' or 1=1--" into both the username and password 
+>
+> The SQL query would look something like this:
+>
+>SELECT * FROM Users WHERE username = '' or 1=1--' AND password = '' or 1=1--' 
+>
+> For both input fields, it is asking for a blank name "" OR saying whether 1=1 
+>
+> the -- comments out the following ' 
+> 
+> Therefore if it satisfies the condition, which it should since 1=1 then you will be able to log in 
+>
+> You then should be on the JARVIS Control Panel page
+>
+> If you right click on the page and click page source 
+>
+> And scroll to the bottom of the page, you will see the total lines of code
+
+#### [Task 7] Remote Code execution and Linux 
+  1. d335e2d13f36558ba1e67969a1718af7
+> Hint: 
+>
+> Since the cat command is disallowed, you can see the "tac" command to read the file backwards 
+>
+> The answer is actually the reversed string therefore you dont need to reverse it once you actually get the string 
